@@ -1,0 +1,47 @@
+# ===== 유니티가 자동으로 다시 만드는 폴더 =====
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+.utmp/
+
+# ===== 코드 편집기가 자동으로 만드는 파일 =====
+.vs/
+.vscode/
+.idea/
+*.csproj
+*.sln
+*.slnx
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# ===== 빌드 결과물 =====
+*.apk
+*.aab
+*.unitypackage
+*.app
+/Test.app/
+*_BackUpThisFolder_ButDontShipItWithYourGame/
+*_BurstDebugInformation_DoNotShip/
+
+# ===== 유니티 크래시 기록 =====
+sysinfo.txt
+crashlytics-build.properties
+
+# ===== 용량 큰 효과음 라이브러리 — 쓰는 것만 예외로 올림 =====즉 아래내용은 올라감
+/Assets/Libraries/Soundbits_freeSFX_2025/Sounds/*
+!/Assets/Libraries/Soundbits_freeSFX_2025/Sounds/10-pin_hit_close-up_12.wav
+!/Assets/Libraries/Soundbits_freeSFX_2025/Sounds/10-pin_hit_close-up_12.wav.meta
