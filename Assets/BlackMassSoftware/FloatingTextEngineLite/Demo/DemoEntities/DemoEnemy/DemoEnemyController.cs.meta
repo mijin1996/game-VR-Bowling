@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 62a2144506cf1af42a21205439366f1e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 344460
+  packageName: Floating Text Engine Lite
+  packageVersion: 1.2.0
+  assetPath: Assets/BlackMassSoftware/FloatingTextEngineLite/Demo/DemoEntities/DemoEnemy/DemoEnemyController.cs
+  uploadId: 873412

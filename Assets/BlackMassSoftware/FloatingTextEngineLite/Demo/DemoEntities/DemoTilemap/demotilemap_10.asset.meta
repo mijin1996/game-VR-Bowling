@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e9b9ec378ac995946b532f169791c3d2
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 344460
+  packageName: Floating Text Engine Lite
+  packageVersion: 1.2.0
+  assetPath: Assets/BlackMassSoftware/FloatingTextEngineLite/Demo/DemoEntities/DemoTilemap/demotilemap_10.asset
+  uploadId: 873412

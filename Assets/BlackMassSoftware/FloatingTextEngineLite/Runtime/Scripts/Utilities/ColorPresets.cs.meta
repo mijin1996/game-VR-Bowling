@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 2598bd9fdecf1b94bb632e9f8ec4e4bc
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 344460
+  packageName: Floating Text Engine Lite
+  packageVersion: 1.2.0
+  assetPath: Assets/BlackMassSoftware/FloatingTextEngineLite/Runtime/Scripts/Utilities/ColorPresets.cs
+  uploadId: 873412

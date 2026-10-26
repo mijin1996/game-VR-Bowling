@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 9626b1c579a46554b89858f56cb77469
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 344460
+  packageName: Floating Text Engine Lite
+  packageVersion: 1.2.0
+  assetPath: Assets/BlackMassSoftware/FloatingTextEngineLite/Runtime/Scripts/FloatingBehaviors/PopBehavior.cs
+  uploadId: 873412

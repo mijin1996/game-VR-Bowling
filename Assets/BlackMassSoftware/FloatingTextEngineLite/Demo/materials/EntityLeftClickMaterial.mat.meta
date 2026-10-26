@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 63a56e045c5db5c44a6147f123775cd6
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 344460
+  packageName: Floating Text Engine Lite
+  packageVersion: 1.2.0
+  assetPath: Assets/BlackMassSoftware/FloatingTextEngineLite/Demo/materials/EntityLeftClickMaterial.mat
+  uploadId: 873412

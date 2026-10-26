@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: a8fbdd633af0dd944bc50c3693b7bfbc
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 344460
+  packageName: Floating Text Engine Lite
+  packageVersion: 1.2.0
+  assetPath: Assets/BlackMassSoftware/FloatingTextEngineLite/Runtime/Scripts/FloatingTextEngine.cs
+  uploadId: 873412

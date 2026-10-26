@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: ec27b669e71c77b4486b745a43c53c43
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 344460
+  packageName: Floating Text Engine Lite
+  packageVersion: 1.2.0
+  assetPath: Assets/BlackMassSoftware/FloatingTextEngineLite/Runtime/Scripts/FloatingBehaviors/BlinkBehavior.cs
+  uploadId: 873412

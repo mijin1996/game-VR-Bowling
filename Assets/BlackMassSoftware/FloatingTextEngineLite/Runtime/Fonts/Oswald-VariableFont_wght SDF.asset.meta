@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: a427c7989cacfeb4b9a32db3d409e453
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 344460
+  packageName: Floating Text Engine Lite
+  packageVersion: 1.2.0
+  assetPath: Assets/BlackMassSoftware/FloatingTextEngineLite/Runtime/Fonts/Oswald-VariableFont_wght
+    SDF.asset
+  uploadId: 873412

@@ -45,3 +45,9 @@ crashlytics-build.properties
 /Assets/Libraries/Soundbits_freeSFX_2025/Sounds/*
 !/Assets/Libraries/Soundbits_freeSFX_2025/Sounds/10-pin_hit_close-up_12.wav
 !/Assets/Libraries/Soundbits_freeSFX_2025/Sounds/10-pin_hit_close-up_12.wav.meta
+# ===== 이 프로젝트 전용 =====
+# 주석 삭제 전 코드 백업 (로컬 보관용)
+/코드백업_*/
+# 안 쓰는 128MB 글꼴 (GitHub 100MB 제한, 필요하면 Jupiter.ttf 로 다시 만들 수 있음)
+/Assets/Fonts/Jupiter SDF.asset
+/Assets/Fonts/Jupiter SDF.asset.meta

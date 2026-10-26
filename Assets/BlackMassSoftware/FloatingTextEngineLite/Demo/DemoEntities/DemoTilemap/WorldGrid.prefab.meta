@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f2598c51e7502c54b9b4680726340d17
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 344460
+  packageName: Floating Text Engine Lite
+  packageVersion: 1.2.0
+  assetPath: Assets/BlackMassSoftware/FloatingTextEngineLite/Demo/DemoEntities/DemoTilemap/WorldGrid.prefab
+  uploadId: 873412

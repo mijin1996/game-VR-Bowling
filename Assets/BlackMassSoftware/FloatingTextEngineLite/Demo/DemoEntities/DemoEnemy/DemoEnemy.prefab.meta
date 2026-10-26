@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 9376099499e8838438a000105e6794e5
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 344460
+  packageName: Floating Text Engine Lite
+  packageVersion: 1.2.0
+  assetPath: Assets/BlackMassSoftware/FloatingTextEngineLite/Demo/DemoEntities/DemoEnemy/DemoEnemy.prefab
+  uploadId: 873412

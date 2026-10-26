@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 818570eb6bc58ac47bf2f17814eb9d02
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 344460
+  packageName: Floating Text Engine Lite
+  packageVersion: 1.2.0
+  assetPath: Assets/BlackMassSoftware/FloatingTextEngineLite/Demo/DemoEntities/DemoTilemap/DemoPalette.prefab
+  uploadId: 873412

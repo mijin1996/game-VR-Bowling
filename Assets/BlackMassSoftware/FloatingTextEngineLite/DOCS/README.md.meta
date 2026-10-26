@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: cc030ca4c0d79a84194934108d09e1be
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 344460
+  packageName: Floating Text Engine Lite
+  packageVersion: 1.2.0
+  assetPath: Assets/BlackMassSoftware/FloatingTextEngineLite/DOCS/README.md
+  uploadId: 873412

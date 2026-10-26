@@ -1,0 +1,11 @@
+This package contains the Oswald font in its distribution.
+
+
+Font:  Oswald - Designed by Vernon Adams, Kalapi Gajjar, Cyreal 
+Source: https://fonts.google.com/specimen/Oswald/license
+License: SIL Open Font License, Version 1.1
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1 . This license is copied below, and is also available with a FAQ at: https://openfontlicense.org
+SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007 
+
+For more information, see: https://openfontlicense.org/open-font-license-official-text/
