@@ -41,10 +41,11 @@
 sysinfo.txt
 crashlytics-build.properties
 
-# ===== 용량 큰 효과음 라이브러리 — 쓰는 것만 예외로 올림 =====즉 아래내용은 올라감
-/Assets/Libraries/Soundbits_freeSFX_2025/Sounds/*
-!/Assets/Libraries/Soundbits_freeSFX_2025/Sounds/10-pin_hit_close-up_12.wav
-!/Assets/Libraries/Soundbits_freeSFX_2025/Sounds/10-pin_hit_close-up_12.wav.meta
+# ===== 운영체제가 자동으로 만드는 파일 =====
+.DS_Store
+Thumbs.db
+
+
 # ===== 이 프로젝트 전용 =====
 # 주석 삭제 전 코드 백업 (로컬 보관용)
 /코드백업_*/
