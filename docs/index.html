@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VR Bowling 시뮬레이션</title>
+<style>
+  :root { --bg:#0d0b1a; --panel:#171330; --line:#2e2756; --text:#efeaff; --muted:#9a92c7; --accent:#ff4fd8; --cyan:#38e8ff; --ok:#6dff9e; --danger:#ff5d73; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:14px/1.5 system-ui, "Malgun Gothic", sans-serif; }
+  header { padding:14px 16px; border-bottom:1px solid var(--line); }
+  header h1 { margin:0; font-size:18px; } header p { margin:2px 0 0; color:var(--muted); font-size:13px; }
+  main { display:grid; grid-template-columns:minmax(0,1fr) 310px; gap:16px; padding:16px; max-width:1260px; margin:0 auto; }
+  .stage { position:relative; }
+  canvas { width:100%; height:auto; background:#120f24; border:1px solid var(--line); border-radius:10px; display:block; touch-action:none; }
+  .overlay { position:absolute; inset:0; display:none; align-items:center; justify-content:center; background:rgba(13,11,26,.72); border-radius:10px; }
+  .overlay.show { display:flex; }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:22px 26px; text-align:center; min-width:260px; }
+  .card h3 { margin:0 0 6px; font-size:26px; } .card p { margin:4px 0 14px; color:var(--muted); }
+  .card button { margin:4px; width:auto; min-width:90px; }
+  aside { background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:14px; }
+  aside h2 { font-size:14px; margin:14px 0 6px; color:var(--cyan); } aside h2:first-child { margin-top:0; }
+  table { width:100%; border-collapse:collapse; font-size:12px; } td { padding:3px 0; border-bottom:1px solid var(--line); } td:last-child { text-align:right; }
+  label { display:block; margin:6px 0; font-size:13px; }
+  button { background:var(--accent); color:#fff; border:0; border-radius:6px; padding:8px 12px; font-weight:700; cursor:pointer; width:100%; margin-top:8px; }
+  button.ghost { background:transparent; border:1px solid var(--line); color:var(--text); }
+  .bad { color:var(--danger); } .good { color:var(--ok); }
+  .hint { color:var(--muted); font-size:12px; }
+  @media (max-width:880px) { main { grid-template-columns:1fr; } }
+
+  .howto { max-width:1240px; margin:16px auto 0; padding:12px 16px; border:2px solid currentColor; border-radius:10px; display:grid; grid-template-columns:auto 1fr; gap:4px 14px; align-items:center; }
+  .howto h2 { grid-column:1 / -1; margin:0 0 4px; font-size:16px; }
+  .howto .goal, .howto .tip { grid-column:1 / -1; margin:0; font-size:13px; opacity:.85; }
+  .howto .tip { margin-top:4px; }
+  .howto .key { font-weight:700; white-space:nowrap; }
+  kbd { display:inline-block; min-width:22px; padding:1px 6px; border:1px solid currentColor; border-bottom-width:3px; border-radius:5px; font:700 12px/1.4 monospace; text-align:center; }
+  @media (max-width:860px) { .howto { margin:12px 16px 0; grid-template-columns:1fr; } .howto .key { white-space:normal; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>🎳 VR Bowling 시뮬레이션 — 위에서 본 버전</h1>
+  <p>VR의 "잡고 휘둘러 놓기"를 <b>마우스 새총 드래그</b>로 바꿨어요. 아래쪽에서 공을 잡고 뒤로 당겼다 놓으면 던져져요. 판정 · 기회 · 시간 규칙은 `LevelManager` 그대로예요.</p>
+</header>
+<section class="howto" aria-label="조작 방법">
+  <h2>🎮 조작 방법</h2>
+  <p class="goal">공을 던져 핀을 쓰러뜨리고 레벨 목표 점수를 넘기세요.</p>
+  <div class="key">[게임 시작] 버튼</div><div>레벨 1 시작</div>
+  <div class="key">아래쪽 분홍 선 밑을 누른 채</div><div>공 잡기 (누른 위치의 레인)</div>
+  <div class="key">뒤(아래)로 당겼다가 놓기</div><div>던지기 — 당긴 반대 방향으로, 많이 당길수록 세게</div>
+  <p class="tip">💡 레인마다 30초 안에 던져야 해요. 핀을 1개라도 쓰러뜨리면 ONE MORE로 기회가 1번 더 생겨요. 키가 안 먹으면 게임 화면을 한 번 클릭하세요.</p>
+</section>
+<main>
+  <div class="stage">
+    <canvas id="cv" width="900" height="640"></canvas>
+    <div class="overlay show" id="ov"><div class="card" id="card"></div></div>
+  </div>
+  <aside>
+    <h2>이번 레벨</h2>
+    <table>
+      <tr><td>레벨</td><td id="sLevel">1</td></tr>
+      <tr><td>점수 / 목표</td><td id="sScore">0 / 500</td></tr>
+      <tr><td>남은 기회</td><td id="sChance">1</td></tr>
+      <tr><td>ONE MORE 사용</td><td id="sOne">0 / 3</td></tr>
+      <tr><td>상태</td><td id="sState">대기</td></tr>
+    </table>
+    <h2>목표 점수 공식 비교</h2>
+    <label><input type="radio" name="goal" value="code" checked> 코드: 레벨 × 500</label>
+    <label><input type="radio" name="goal" value="plan"> 제안: 300 + 레벨 × 200</label>
+    <table id="tGoal"></table>
+    <p class="hint">한 레벨 최대 투구 = 기회 1 + ONE MORE 3 = 4번 → 공 하나로는 최대 40핀(4,000점)이에요. <span class="bad">빨간 줄</span>은 이론상 클리어할 수 없는 레벨이에요.</p>
+    <h2>랭킹 (상위 5)</h2>
+    <table id="tRank"></table>
+    <button class="ghost" id="btnClear">랭킹 지우기</button>
+  </aside>
+</main>
+<script>
+(() => {
+  'use strict';
+  // ---- LevelManager 기본값 ----
+  const MAX_LEVEL = 10, START_CHANCES = 1, BONUS_CHANCE = 1, MAX_ONE_MORE = 3, MIN_PINS_ONE_MORE = 1;
+  const SETTLE_TIME = 1.5, MISS_TIME = 8, THROW_LIMIT = 30, PIN_SCORE = 100, POPUP_TIME = 1.1;
+  // ---- 시뮬 물리 ----
+  const LANES = 4, BALL_R = 15, PIN_R = 8, BALL_M = 7, PIN_M = 1, FRICTION = 0.55, MAX_SPEED = 900;
+  const FALL_MOVE = 7, FALL_SPEED = 140;   // 이만큼 밀리거나 빨라지면 "기울어 쓰러짐"
+  const cv = document.getElementById('cv');
+  const ctx = cv.getContext('2d');
+  const $ = (id) => document.getElementById(id);
+  const LANE_W = cv.width / LANES, GUTTER = 22, FOUL_Y = cv.height - 150;
+
+  let g, ball = null, drag = null, pins = [], popups = [];
+
+  function goal(level) { return document.querySelector('input[name=goal]:checked').value === 'code' ? level * 500 : 300 + level * 200; }
+  function laneOf(x) { return Math.max(0, Math.min(LANES - 1, Math.floor(x / LANE_W))); }
+  function laneInner(i) { return [i * LANE_W + GUTTER, (i + 1) * LANE_W - GUTTER]; }
+
+  function setupPins() {
+    pins = [];
+    for (let l = 0; l < LANES; l++) {
+      const cx = l * LANE_W + LANE_W / 2;
+      let id = 0;
+      for (let row = 0; row < 4; row++) for (let k = 0; k <= row; k++) {
+        const x = cx + (k - row / 2) * 26, y = 70 + (3 - row) * 24;
+        pins.push({ lane: l, x, y, ox: x, oy: y, vx: 0, vy: 0, fallen: false, gone: 0, id: id++ });
+      }
+    }
+  }
+  const fallenCount = () => pins.filter((p) => p.fallen).length;
+
+  function newGame() { g = { level: 1, session: Date.now(), phase: 'lobby' }; setupPins(); showLobby(); }
+
+  function startLevel() {
+    Object.assign(g, { score: 0, chances: START_CHANCES, oneMore: 0, phase: 'aim', timeLeft: THROW_LIMIT, activeLane: -1, lastFail: false });
+    ball = null; setupPins(); hideOverlay(); popup(`LEVEL ${g.level}`, '#38e8ff');
+  }
+
+  function popup(text, color) { popups.push({ text, color, t: POPUP_TIME }); }
+
+  // ---- 판정 (LevelManager.JudgeThrow) ----
+  function beginJudge() { g.phase = 'judge'; g.judgeStart = performance.now() / 1000; g.lastCount = fallenCount(); g.lastChange = g.judgeStart; }
+
+  function judgeTick(now) {
+    const count = fallenCount();
+    if (count !== g.lastCount) { g.lastCount = count; g.lastChange = now; }
+    const settled = count > 0 && now - g.lastChange >= SETTLE_TIME;
+    const noHit = count === 0 && now - g.judgeStart >= MISS_TIME;
+    if (!settled && !noHit) return;
+    rememberLane();
+    if (g.score >= goal(g.level)) { popup('NICE JOB!', '#6dff9e'); finish(true); return; }
+    g.chances--;
+    const isMiss = count < MIN_PINS_ONE_MORE;
+    if (isMiss) popup('MISS', '#ff5d73');
+    else if (g.oneMore < MAX_ONE_MORE) { g.oneMore++; g.chances += BONUS_CHANCE; popup('ONE MORE!', '#ff4fd8'); }
+    if (g.chances <= 0) { if (!isMiss) popup('FAIL', '#ff5d73'); finish(false); return; }
+    setupPins(); ball = null; g.phase = 'aim'; g.timeLeft = THROW_LIMIT;
+  }
+
+  function rememberLane() {
+    let best = -1, bestN = 0;
+    for (let l = 0; l < LANES; l++) { const n = pins.filter((p) => p.lane === l && p.fallen).length; if (n > bestN) { bestN = n; best = l; } }
+    if (best >= 0) g.activeLane = best;
+  }
+
+  function finish(clear) {
+    g.phase = 'result'; g.lastFail = !clear;
+    saveRank();
+    setTimeout(() => showResult(clear), POPUP_TIME * 1000);
+  }
+
+  // ---- 랭킹 (한 판 = 한 줄, 0점 저장 안 함, 10개 보관) ----
+  function loadRank() { try { return JSON.parse(localStorage.getItem('bowling-rank')) || []; } catch (e) { return []; } }
+  function saveRank() {
+    if (g.score <= 0) return;
+    const list = loadRank().filter((r) => r.session !== g.session || r.score > g.score);
+    if (!list.some((r) => r.session === g.session)) list.push({ session: g.session, score: g.score, level: g.level });
+    list.sort((a, b) => b.score - a.score || b.level - a.level);
+    try { localStorage.setItem('bowling-rank', JSON.stringify(list.slice(0, 10))); } catch (e) { /* 저장 실패 무시 */ }
+    renderRank();
+  }
+  function renderRank() {
+    const list = loadRank().slice(0, 5);
+    $('tRank').innerHTML = list.length ? list.map((r, i) => `<tr><td>${i + 1}. LEVEL ${r.level}</td><td>${r.score.toLocaleString()}점</td></tr>`).join('') : '<tr><td class="hint">아직 기록이 없어요</td><td></td></tr>';
+  }
+
+  // ---- 화면(판넬) ----
+  function showCard(html) { $('card').innerHTML = html; $('ov').classList.add('show'); }
+  function hideOverlay() { $('ov').classList.remove('show'); }
+  function showLobby() { showCard('<h3>🎳 BOWLLY BOLL</h3><p>4개 레인 중 아무 데나 쳐도 돼요</p><button id="bStart">게임 시작</button>'); $('bStart').onclick = startLevel; }
+  function showResult(clear) {
+    const done = clear && g.level >= MAX_LEVEL;
+    showCard(`<h3 class="${clear ? 'good' : 'bad'}">${done ? 'GAME COMPLETE!' : clear ? 'LEVEL CLEAR' : 'LEVEL FAILED'}</h3>
+      <p>점수 ${g.score.toLocaleString()} / 목표 ${goal(g.level).toLocaleString()}</p><p id="note" class="hint"></p>
+      <button id="bNext">NEXT</button><button id="bRe" class="ghost">RESTART</button><button id="bQuit" class="ghost">QUIT</button>`);
+    $('bNext').onclick = () => {
+      if (g.lastFail) { $('note').textContent = '클리어해야 다음 레벨로 갈 수 있어요'; return; }
+      if (!done) g.level++;
+      startLevel();
+    };
+    $('bRe').onclick = startLevel;
+    $('bQuit').onclick = () => { g.level = 1; g.session = Date.now(); g.phase = 'lobby'; setupPins(); showLobby(); };
+  }
+
+  function renderGoalTable() {
+    const maxScore = (START_CHANCES + MAX_ONE_MORE) * 10 * PIN_SCORE;
+    let html = '<tr><td><b>레벨</b></td><td><b>목표 / 필요 스트라이크</b></td></tr>';
+    for (let l = 1; l <= MAX_LEVEL; l++) {
+      const gl = goal(l);
+      html += `<tr class="${gl > maxScore ? 'bad' : ''}"><td>${l}</td><td>${gl.toLocaleString()} / ${(gl / 1000).toFixed(1)}번</td></tr>`;
+    }
+    $('tGoal').innerHTML = html;
+  }
+
+  // ---- 물리 ----
+  function collide(a, ra, ma, b, rb, mb) {
+    const dx = b.x - a.x, dy = b.y - a.y, d = Math.hypot(dx, dy), min = ra + rb;
+    if (d === 0 || d >= min) return;
+    const nx = dx / d, ny = dy / d, overlap = min - d;
+    a.x -= nx * overlap * mb / (ma + mb); a.y -= ny * overlap * mb / (ma + mb);
+    b.x += nx * overlap * ma / (ma + mb); b.y += ny * overlap * ma / (ma + mb);
+    const rel = (b.vx - a.vx) * nx + (b.vy - a.vy) * ny;
+    if (rel > 0) return;
+    const j = -(1 + 0.7) * rel / (1 / ma + 1 / mb);
+    a.vx -= j * nx / ma; a.vy -= j * ny / ma; b.vx += j * nx / mb; b.vy += j * ny / mb;
+  }
+
+  function physics(dt) {
+    if (ball) {
+      ball.x += ball.vx * dt; ball.y += ball.vy * dt;
+      const [l, r] = laneInner(ball.lane);
+      if (!ball.gutter && (ball.x < l || ball.x > r)) ball.gutter = true;           // 거터에 빠짐
+      if (ball.gutter) ball.x = Math.max(ball.lane * LANE_W + 6, Math.min((ball.lane + 1) * LANE_W - 6, ball.x));
+      if (ball.y < -40 || Math.hypot(ball.vx, ball.vy) < 8) ball.done = true;        // 공 회수
+    }
+    for (const p of pins) {
+      if (p.gone >= 1) continue;
+      p.x += p.vx * dt; p.y += p.vy * dt;
+      const k = Math.pow(FRICTION, dt * 3); p.vx *= k; p.vy *= k;
+      const [l, r] = laneInner(p.lane);
+      if (p.x < l - 10 || p.x > r + 10 || p.y < 10) p.fallen = true;
+      if (!p.fallen && (Math.hypot(p.x - p.ox, p.y - p.oy) > FALL_MOVE || Math.hypot(p.vx, p.vy) > FALL_SPEED)) p.fallen = true;
+      if (p.fallen) p.gone = Math.min(1, p.gone + dt * 0.8);
+    }
+    for (const p of pins) {
+      if (p.gone >= 1) continue;
+      if (p.fallen && !p.scored) { p.scored = true; g.score += PIN_SCORE; }
+      if (ball && !ball.gutter) collide(ball, BALL_R, BALL_M, p, PIN_R, PIN_M);
+    }
+    for (let i = 0; i < pins.length; i++) for (let j = i + 1; j < pins.length; j++) {
+      if (pins[i].lane === pins[j].lane && pins[i].gone < 1 && pins[j].gone < 1) collide(pins[i], PIN_R, PIN_M, pins[j], PIN_R, PIN_M);
+    }
+  }
+
+  function update(dt) {
+    popups.forEach((p) => { p.t -= dt; }); popups = popups.filter((p) => p.t > 0);
+    if (!g || g.phase === 'lobby' || g.phase === 'result') return;
+    physics(dt);
+    if (g.phase === 'aim') {
+      g.timeLeft -= dt;
+      if (g.timeLeft <= 0) { g.timeLeft = 0; popup('MISS', '#ff5d73'); finish(false); }   // 30초 안에 못 던짐
+    } else if (g.phase === 'judge') {
+      judgeTick(performance.now() / 1000);
+      if (ball && ball.done) ball = null;
+    }
+  }
+
+  // ---- 그리기 ----
+  function draw() {
+    ctx.clearRect(0, 0, cv.width, cv.height);
+    const t = performance.now() / 1000;
+    for (let l = 0; l < LANES; l++) {
+      const x0 = l * LANE_W;
+      ctx.fillStyle = '#1d1838'; ctx.fillRect(x0 + 2, 0, LANE_W - 4, cv.height);
+      const lg = ctx.createLinearGradient(0, 0, 0, cv.height);
+      lg.addColorStop(0, '#3a2a55'); lg.addColorStop(1, '#5b3f78');
+      ctx.fillStyle = lg; ctx.fillRect(x0 + GUTTER, 0, LANE_W - GUTTER * 2, cv.height);
+      ctx.fillStyle = `hsla(${(t * 60 + l * 90) % 360},100%,60%,.18)`; ctx.fillRect(x0 + GUTTER, 0, LANE_W - GUTTER * 2, 6);
+      ctx.strokeStyle = '#ff4fd8'; ctx.beginPath(); ctx.moveTo(x0 + GUTTER, FOUL_Y); ctx.lineTo(x0 + LANE_W - GUTTER, FOUL_Y); ctx.stroke();
+      if (g && g.phase === 'aim' && (g.activeLane < 0 || g.activeLane === l)) {
+        ctx.fillStyle = g.timeLeft < 10 ? '#ff5d73' : '#38e8ff'; ctx.font = 'bold 22px sans-serif'; ctx.textAlign = 'center';
+        ctx.fillText(Math.ceil(g.timeLeft), x0 + LANE_W / 2, 200);
+      }
+      const n = pins.filter((p) => p.lane === l && p.fallen).length;
+      ctx.fillStyle = '#9a92c7'; ctx.font = '13px sans-serif'; ctx.textAlign = 'center'; ctx.fillText(`${n} pin`, x0 + LANE_W / 2, 225);
+    }
+    for (const p of pins) {
+      if (p.gone >= 1) continue;
+      ctx.globalAlpha = 1 - p.gone;
+      ctx.fillStyle = p.fallen ? '#7a6f9a' : '#ffffff';
+      ctx.beginPath(); ctx.arc(p.x, p.y, PIN_R, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = '#ff4fd8'; ctx.beginPath(); ctx.arc(p.x, p.y, 3, 0, Math.PI * 2); ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+    if (g && g.phase === 'aim' && !ball) {
+      ctx.fillStyle = '#9a92c7'; ctx.font = '13px sans-serif'; ctx.textAlign = 'center';
+      ctx.fillText('원하는 레인 아래쪽을 누르고 뒤로 당겼다 놓기', cv.width / 2, cv.height - 18);
+    }
+    if (drag) {
+      ctx.strokeStyle = '#38e8ff'; ctx.lineWidth = 3; ctx.setLineDash([6, 6]);
+      ctx.beginPath(); ctx.moveTo(drag.x, drag.y); ctx.lineTo(drag.x - (drag.cx - drag.x) * 2, drag.y - (drag.cy - drag.y) * 2); ctx.stroke(); ctx.setLineDash([]); ctx.lineWidth = 1;
+      ctx.fillStyle = '#38e8ff'; ctx.beginPath(); ctx.arc(drag.x, drag.y, BALL_R, 0, Math.PI * 2); ctx.fill();
+    }
+    if (ball) { ctx.fillStyle = ball.gutter ? '#555' : '#38e8ff'; ctx.beginPath(); ctx.arc(ball.x, ball.y, BALL_R, 0, Math.PI * 2); ctx.fill(); }
+    if (popups.length) {
+      const p = popups[popups.length - 1], k = Math.min(1, (POPUP_TIME - p.t) * 6);
+      ctx.save(); ctx.translate(cv.width / 2, cv.height / 2 - 20); ctx.scale(0.6 + 0.4 * k, 0.6 + 0.4 * k);
+      ctx.fillStyle = p.color; ctx.shadowColor = p.color; ctx.shadowBlur = 24; ctx.font = 'bold 56px sans-serif'; ctx.textAlign = 'center'; ctx.fillText(p.text, 0, 0); ctx.restore();
+    }
+    if (g && g.score !== undefined) {
+      $('sLevel').textContent = g.level;
+      $('sScore').textContent = `${g.score.toLocaleString()} / ${goal(g.level).toLocaleString()}`;
+      $('sChance').textContent = g.chances; $('sOne').textContent = `${g.oneMore} / ${MAX_ONE_MORE}`;
+      $('sState').textContent = { aim: `던지기 (${Math.ceil(g.timeLeft)}초)`, judge: '판정 중…', result: '결과', lobby: '로비' }[g.phase];
+    }
+  }
+
+  let last = performance.now();
+  function loop(now) { const dt = Math.min(0.02, (now - last) / 1000); last = now; update(dt); draw(); requestAnimationFrame(loop); }
+
+  function pos(e) { const r = cv.getBoundingClientRect(); return [(e.clientX - r.left) / r.width * cv.width, (e.clientY - r.top) / r.height * cv.height]; }
+  cv.addEventListener('pointerdown', (e) => {
+    if (!g || g.phase !== 'aim' || ball) return;
+    let [x, y] = pos(e);
+    if (y < FOUL_Y) return;
+    const lane = laneOf(x), [l, r] = laneInner(lane);
+    x = Math.max(l + BALL_R, Math.min(r - BALL_R, x));
+    drag = { lane, x, y: FOUL_Y + 40, cx: x, cy: FOUL_Y + 40 };
+    cv.setPointerCapture(e.pointerId);
+  });
+  cv.addEventListener('pointermove', (e) => { if (drag) [drag.cx, drag.cy] = pos(e); });
+  cv.addEventListener('pointerup', () => {
+    if (!drag) return;
+    let vx = (drag.x - drag.cx) * 6, vy = (drag.y - drag.cy) * 6;
+    const sp = Math.hypot(vx, vy);
+    if (vy < -40 && sp > 60) {
+      if (sp > MAX_SPEED) { vx *= MAX_SPEED / sp; vy *= MAX_SPEED / sp; }
+      ball = { lane: drag.lane, x: drag.x, y: drag.y, vx, vy, gutter: false, done: false };
+      beginJudge();
+    }
+    drag = null;
+  });
+  document.querySelectorAll('input[name=goal]').forEach((r) => r.addEventListener('change', renderGoalTable));
+  $('btnClear').onclick = () => { try { localStorage.removeItem('bowling-rank'); } catch (e) { /* 무시 */ } renderRank(); };
+  renderGoalTable(); renderRank(); newGame();
+  requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>
