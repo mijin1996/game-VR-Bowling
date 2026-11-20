@@ -1,5 +1,16 @@
 # VR Bowling (BowllyBoll) — 기획서 목차
 
+> 문서 세트: **목차** · 기획: [컨셉](Concept.md) · [시스템](System.md) · [전투·개체](Combat_Entity.md) · [레벨 디자인](LevelDesign.md) · [밸런스](Balance.md) · 사업·운영: [사업 검토](Business.md) · [요구사항·로드맵](Requirements.md) · [BM·경제](Monetization.md) · [서버·데이터](Server_Data.md) · [리소스](Resources.md) · [로그·지표](Analytics.md) · [QA·출시](QA_Release.md) · [라이브 운영](LiveOps.md) · [사업화·법무](Business_Legal.md) · [needFix](needFix.md)
+
+> **문서 정보** · ID `D00-INDEX` · v1.0 · 상태 `Review` · Owner ME (기획 · 개발) · 최종 수정 2026-11-21
+
+**변경 이력**
+
+| 버전 | 날짜 | 변경 내용 | 사유 | 결정자 | 영향 범위 |
+|---|---|---|---|---|---|
+| v0.9 | 2026-11-20 | 기존 문서 (자세한 기록은 git 커밋) | — | ME | — |
+| v1.0 | 2026-11-21 | 문서 정보 · 변경 이력 · 문서 ID 추가, 문서 세트에 사업·운영 문서 연결 | 사내 문서 기준 v3 적용 | ME | 문서만 (게임 코드 · 데이터 변경 없음) |
+
 > **분류:** VR 게임 (6DoF 헤드셋, Oculus · Windows MR 설정) · **장르:** 레벨제 아케이드 볼링 + 음악 조명
 > **엔진:** Unity 6 (6000.3.26f1) · C# · XR Interaction Toolkit 3.x · URP
 > VR 컨트롤러로 공을 잡고 던져 30초 안에 핀을 쓰러뜨리고, 레벨마다 높아지는 목표 점수를 넘기는 볼링 게임.
@@ -7,45 +18,92 @@
 ---
 
 ## 문서 구성
-컨셉 ~ 밸런스 문서는 **지금 프로젝트에 구현된 내용**(코드 · 씬 · 프리팹)과 그 값으로 계산한 것만 담았어요. 단, 컨셉의 **기획 의도**는 기획자가 정한 방향이에요.
-고쳐야 할 점 · 부족한 점 · 제안 · 정해야 할 항목은 모두 **needFix**에 있어요.
-구현 방법 설명은 `docs/00 ~ 07`, 이 폴더는 기획 관점 문서예요.
+이 폴더는 **실제로 출시 · 운영하는 회사 기준(사내 문서 기준 v3)**으로 정리돼 있어요.
+
+- **① 게임 기획** 문서(컨셉 ~ 밸런스)는 **지금 프로젝트에 구현된 내용**(코드 · 씬 · 프리팹 · 데이터)과 그 값으로 계산한 것만 담아요. 단, 컨셉의 **기획 의도**는 기획자가 정한 방향이에요.
+- **② 사업 · 운영** 문서는 출시 · 매출 · 운영을 위한 **계획(초안)**이에요. 상태가 `Draft`인 문서는 아직 정해지지 않은 내용이 있고, 정할 것은 needFix에 모여 있어요.
+- 고쳐야 할 점 · 부족한 점 · 제안 · 정해야 할 항목은 모두 **[needFix](needFix.md)**에 있어요.
+
+**문서 규칙** (모든 문서 공통)
+
+| 규칙 | 내용 |
+|---|---|
+| 문서 정보 | 맨 위에 ID · 버전 · 상태 · Owner · 최종 수정일 |
+| 상태 | `Draft`(작성 중) → `Review`(검토 중) → `Confirmed`(구현 대상) → `Deprecated`(폐기). **Confirmed만 구현해요** |
+| 변경 이력 | 문서 정보 바로 아래. 무엇이 · 왜 · 어디에 영향이 가는지 |
+| ID | 한 번 정하면 바꾸지 않아요. 코드 · JSON · 로그 · 스토어 상품이 같은 ID를 써요 |
+| 데이터 | 원본은 **JSON** (`Balance/`). 수치의 의도 · 근거는 밸런스 문서에 |
 
 **[구성도] 문서 지도**
 ```mermaid
 flowchart LR
   P["Proposal.md<br/>목차 · 그림 규칙"]:::scene
-  C1["Concept<br/>장르 · 재미 · 코어 루프"]:::script
-  C2["System<br/>레벨 · 판정 · 공 · 핀 · 랭킹"]:::script
-  C3["Combat_Entity<br/>개체 스펙"]:::script
-  C4["LevelDesign<br/>씬 구성 · 난이도"]:::script
-  C5["Balance<br/>수치 · 계산 · JSON"]:::script
-  S6["needFix<br/>고칠 점 · 제안"]:::data
+  subgraph G1["① 게임 기획 (만드는 것)"]
+    direction TB
+    D01_CONCEPT["컨셉<br/>D01-CONCEPT"]:::script
+    D03_SYSTEM["시스템<br/>D03-SYSTEM"]:::script
+    D04_ENTITY["전투·개체<br/>D04-ENTITY"]:::script
+    D05_LEVEL["레벨 디자인<br/>D05-LEVEL"]:::script
+    D06_BAL["밸런스<br/>D06-BAL"]:::script
+  end
+  subgraph G2["② 사업 · 운영 (출시 · 매출 · 운영)"]
+    direction TB
+    D01_BIZ["사업 검토<br/>D01-BIZ"]:::obj
+    D02_REQ["요구사항·로드맵<br/>D02-REQ"]:::obj
+    D07_BM["BM·경제<br/>D07-BM"]:::obj
+    D08_SERVER["서버·데이터<br/>D08-SERVER"]:::obj
+    D09_RES["리소스<br/>D09-RES"]:::obj
+    D10_LOG["로그·지표<br/>D10-LOG"]:::obj
+    D11_QA["QA·출시<br/>D11-QA"]:::obj
+    D12_LIVE["라이브 운영<br/>D12-LIVE"]:::obj
+    D13_LEGAL["사업화·법무<br/>D13-LEGAL"]:::obj
+  end
+  FIX["needFix<br/>고칠 점 · 정할 것"]:::data
   SIM["../index.html<br/>시뮬레이션"]:::ui
-  P --> C1
-  P --> C2
-  P --> C3
-  P --> C4
-  P --> C5
-  P --> S6
+  P --> G1
+  P --> G2
+  P --> FIX
   P --> SIM
+  G1 -.->|"정할 것 · 문제"| FIX
+  G2 -.->|"정할 것 · 문제"| FIX
   classDef scene fill:#2F8F6B,color:#fff,stroke:#2F8F6B
   classDef script fill:#3AA6C8,color:#fff,stroke:#3AA6C8
   classDef obj fill:#6B7280,color:#fff,stroke:#6B7280
   classDef ui fill:#5A4A9E,color:#fff,stroke:#5A4A9E
   classDef data fill:#A33A33,color:#fff,stroke:#A33A33
 ```
-> 읽는 법: 왼쪽 목차에서 오른쪽 문서로 이어져요. 빨강 = 고칠 점 · 제안, 보라 = 시뮬레이션이에요.
+> 읽는 법: 왼쪽 목차에서 ① 게임 기획 · ② 사업 · 운영 문서로 이어져요. 두 묶음에서 나온 문제 · 정할 것은 빨강 needFix로 모여요. 보라 = 시뮬레이션이에요.
 
-| 문서 | 주로 보는 사람 |
-|---|---|
-| [게임 컨셉](Concept.md) | 모두 |
-| [시스템](System.md) | 개발 |
-| [투구 · 개체](Combat_Entity.md) | 개발 · 아트 |
-| [레벨 디자인](LevelDesign.md) | 기획 · 개발 |
-| [밸런스 · 데이터](Balance.md) · [JSON](Balance/) | 기획 · 개발 |
-| [needFix](needFix.md) | 모두 |
-| [시뮬레이션](../index.html) | 모두 |
+| 문서 | ID | 단계 | 상태 | 주로 보는 사람 |
+|---|---|---|---|---|
+| [컨셉](Concept.md) | `D01-CONCEPT` | P0 | `Review` | 모두 |
+| [시스템](System.md) | `D03-SYSTEM` | P1 | `Review` | 개발 |
+| [전투·개체](Combat_Entity.md) | `D04-ENTITY` | P1 | `Review` | 개발 · 아트 |
+| [레벨 디자인](LevelDesign.md) | `D05-LEVEL` | P2 | `Review` | 기획 · 개발 |
+| [밸런스](Balance.md) | `D06-BAL` | P1 ~ P4 | `Review` | 기획 · 개발 |
+| [사업 검토](Business.md) | `D01-BIZ` | P0 | `Draft` | 대표 · 모두 |
+| [요구사항·로드맵](Requirements.md) | `D02-REQ` | P1 ~ | `Draft` | 기획 · 개발 |
+| [BM·경제](Monetization.md) | `D07-BM` | P1 | `Draft` | 대표 · 기획 · 개발 |
+| [서버·데이터](Server_Data.md) | `D08-SERVER` | P1 | `Draft` | 개발 |
+| [리소스](Resources.md) | `D09-RES` | P2 | `Draft` | 아트 · 사운드 · 개발 |
+| [로그·지표](Analytics.md) | `D10-LOG` | P2 | `Draft` | 기획 · 개발 |
+| [QA·출시](QA_Release.md) | `D11-QA` | P2 ~ P3 | `Draft` | 모두 |
+| [라이브 운영](LiveOps.md) | `D12-LIVE` | P3 ~ P4 | `Draft` | 대표 · 기획 |
+| [사업화·법무](Business_Legal.md) | `D13-LEGAL` | P0 ~ P3 | `Draft` | 대표 |
+| [needFix](needFix.md) | `D00-FIX` | — | `Review` | 모두 |
+| [시뮬레이션](../index.html) | — | — | — | 모두 |
+
+**단계별 문서 지도**
+
+| 단계 | 목표 | 문서 | 다음 단계로 가는 조건 |
+|---|---|---|---|
+| P0 사업 검토 | 만들 가치가 있는지 | 컨셉 · 사업 검토 | 타깃 · 핵심 재미 · 수익 구조 · 일정 승인 |
+| P1 설계 | 무엇을 어떻게 만들지 확정 | 요구사항 · 시스템 · 전투 · 밸런스 · BM · 서버 | MVP 범위 확정, 핵심 문서 `Confirmed` |
+| P2 개발 | 알파 → 베타 | 레벨 디자인 · 리소스 · 로그 | 모든 Must 구현, 치명 버그 0 |
+| P3 출시 준비 | 스토어 출시 가능 | QA · 출시 · 사업화 · 법무 | 등급분류 · 심사 · 법적 고지 완료 |
+| P4 라이브 운영 | 유지 · 성장 | 라이브 운영 | 업데이트마다 변경 이력 · 지표 리뷰 |
+
+> 지금 위치: **P2 개발 — 잡고 던지기 · 레벨 목표 · 음악 조명은 동작, 저작권 곡 교체 · 기록 저장 · 출시 준비는 아직 없음**
 
 ---
 
@@ -90,7 +148,6 @@ flowchart LR
 | 보라 | 결과 · 클리어 |
 
 **세부 조건 (코드 기준)** 은 시스템 문서 끝 **부록 A**에 모여 있어요. 본문 흐름도 아래의 링크로 바로 갈 수 있어요.
-
 
 **아이콘** — 상자 앞 아이콘만 봐도 종류를 알 수 있어요.
 
