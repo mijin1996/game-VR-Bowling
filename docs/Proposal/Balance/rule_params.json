@@ -1,0 +1,92 @@
+{
+  "level": {
+    "maxLevel": 10,
+    "scorePerLevel": 500
+  },
+  "score": {
+    "pinScore": 100
+  },
+  "chance": {
+    "startChances": 1,
+    "bonusChance": 1,
+    "minPinsForOneMore": 1,
+    "maxOneMore": 3
+  },
+  "judge": {
+    "settleTime": 1.5,
+    "missTime": 8,
+    "throwLimit": 30
+  },
+  "pin": {
+    "fallenAngle": 45,
+    "unfreezeMargin": 0.05,
+    "unfreezeBallSpeed": 0.2
+  },
+  "ball": {
+    "respawnDelay": 0.5,
+    "leaveSocket": 0.2,
+    "recallTime": 30,
+    "recallDistance": 30,
+    "recallY": -10
+  },
+  "layout": {
+    "ballSpawners": 3,
+    "socketsPerSpawner": 5,
+    "pinSpawnersInScene": 4,
+    "activeLanes": 3,
+    "pinsPerLane": 10
+  },
+  "popup": {
+    "fadeTime": 0.5,
+    "showTime": 1.5,
+    "popScale": 1.6
+  },
+  "ranking": {
+    "showCount": 5
+  },
+  "units": {
+    "settleTime": "초",
+    "missTime": "초",
+    "throwLimit": "초",
+    "fallenAngle": "도",
+    "unfreezeMargin": "m",
+    "unfreezeBallSpeed": "m/s",
+    "respawnDelay": "초",
+    "leaveSocket": "m",
+    "recallTime": "초",
+    "recallDistance": "m",
+    "recallY": "m",
+    "fadeTime": "초",
+    "showTime": "초",
+    "popScale": "배"
+  },
+  "source": {
+    "maxLevel": "BowlingGame.unity LevelManager",
+    "scorePerLevel": "LevelManager",
+    "pinScore": "GameManager.pinScore",
+    "startChances": "LevelManager",
+    "bonusChance": "LevelManager.bonusFor5",
+    "minPinsForOneMore": "LevelManager",
+    "maxOneMore": "LevelManager",
+    "settleTime": "LevelManager",
+    "missTime": "LevelManager",
+    "throwLimit": "LevelManager",
+    "fallenAngle": "Pin (scene)",
+    "unfreezeMargin": "Pin (scene)",
+    "unfreezeBallSpeed": "Pin.FixedUpdate (sqrMagnitude 0.04)",
+    "respawnDelay": "BallSpawner (scene x3)",
+    "leaveSocket": "BALL prefabs (code default 0.5)",
+    "recallTime": "BALL prefabs",
+    "recallDistance": "BALL prefabs",
+    "recallY": "BALL prefabs",
+    "ballSpawners": "BowlingGame.unity",
+    "socketsPerSpawner": "BowlingGame.unity",
+    "pinSpawnersInScene": "BowlingGame.unity [Spawners]",
+    "activeLanes": "BowlingGame.unity — 핀 (3) 꺼짐, LevelManager는 켜진 PinSpawner만 찾음",
+    "pinsPerLane": "PinSpawner.spawnPoints",
+    "fadeTime": "ButtonManager.fadeTime",
+    "showTime": "ButtonManager.showTime",
+    "popScale": "ButtonManager.popScale",
+    "showCount": "RankingBoard.showCount"
+  }
+}

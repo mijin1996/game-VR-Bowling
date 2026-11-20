@@ -1,0 +1,110 @@
+{
+  "rule": {
+    "goalPerLevel": 500,
+    "pinScore": 100,
+    "maxThrowsPerLevel": 4,
+    "formula": "goal = level × goalPerLevel"
+  },
+  "levels": [
+    {
+      "level": 1,
+      "goal": 500,
+      "derived": {
+        "pinsNeeded": 5,
+        "minThrows10Pin": 1,
+        "pinsPerThrowNeeded4": 1.25,
+        "reachableOneBallPerThrow": true
+      }
+    },
+    {
+      "level": 2,
+      "goal": 1000,
+      "derived": {
+        "pinsNeeded": 10,
+        "minThrows10Pin": 1,
+        "pinsPerThrowNeeded4": 2.5,
+        "reachableOneBallPerThrow": true
+      }
+    },
+    {
+      "level": 3,
+      "goal": 1500,
+      "derived": {
+        "pinsNeeded": 15,
+        "minThrows10Pin": 2,
+        "pinsPerThrowNeeded4": 3.75,
+        "reachableOneBallPerThrow": true
+      }
+    },
+    {
+      "level": 4,
+      "goal": 2000,
+      "derived": {
+        "pinsNeeded": 20,
+        "minThrows10Pin": 2,
+        "pinsPerThrowNeeded4": 5,
+        "reachableOneBallPerThrow": true
+      }
+    },
+    {
+      "level": 5,
+      "goal": 2500,
+      "derived": {
+        "pinsNeeded": 25,
+        "minThrows10Pin": 3,
+        "pinsPerThrowNeeded4": 6.25,
+        "reachableOneBallPerThrow": true
+      }
+    },
+    {
+      "level": 6,
+      "goal": 3000,
+      "derived": {
+        "pinsNeeded": 30,
+        "minThrows10Pin": 3,
+        "pinsPerThrowNeeded4": 7.5,
+        "reachableOneBallPerThrow": true
+      }
+    },
+    {
+      "level": 7,
+      "goal": 3500,
+      "derived": {
+        "pinsNeeded": 35,
+        "minThrows10Pin": 4,
+        "pinsPerThrowNeeded4": 8.75,
+        "reachableOneBallPerThrow": true
+      }
+    },
+    {
+      "level": 8,
+      "goal": 4000,
+      "derived": {
+        "pinsNeeded": 40,
+        "minThrows10Pin": 4,
+        "pinsPerThrowNeeded4": 10,
+        "reachableOneBallPerThrow": true
+      }
+    },
+    {
+      "level": 9,
+      "goal": 4500,
+      "derived": {
+        "pinsNeeded": 45,
+        "minThrows10Pin": 5,
+        "pinsPerThrowNeeded4": 11.25,
+        "reachableOneBallPerThrow": false
+      }
+    },
+    {
+      "level": 10,
+      "goal": 5000,
+      "derived": {
+        "pinsNeeded": 50,
+        "minThrows10Pin": 5,
+        "pinsPerThrowNeeded4": 12.5,
+        "reachableOneBallPerThrow": false
+      }
+    }
+  ]
+}
