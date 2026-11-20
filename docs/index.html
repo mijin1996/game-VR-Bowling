@@ -79,7 +79,7 @@
   'use strict';
   // ---- LevelManager 기본값 ----
   const MAX_LEVEL = 10, START_CHANCES = 1, BONUS_CHANCE = 1, MAX_ONE_MORE = 3, MIN_PINS_ONE_MORE = 1;
-  const SETTLE_TIME = 1.5, MISS_TIME = 8, THROW_LIMIT = 30, PIN_SCORE = 100, POPUP_TIME = 1.1;
+  const SETTLE_TIME = 1.5, MISS_TIME = 8, THROW_LIMIT = 30, PIN_SCORE = 100, POPUP_TIME = 2.0;
   // ---- 시뮬 물리 ----
   const LANES = 3, BALL_R = 15, PIN_R = 8, BALL_M = 7, PIN_M = 1, FRICTION = 0.55, MAX_SPEED = 900;
   const FALL_MOVE = 7, FALL_SPEED = 140;   // 이만큼 밀리거나 빨라지면 "기울어 쓰러짐"
@@ -124,7 +124,8 @@
     if (count !== g.lastCount) { g.lastCount = count; g.lastChange = now; }
     const settled = count > 0 && now - g.lastChange >= SETTLE_TIME;
     const noHit = count === 0 && now - g.judgeStart >= MISS_TIME;
-    if (!settled && !noHit) return;
+    const reachedGoal = g.score >= goal(g.level);   // 실제 코드: 굴러가는 중 점수가 목표에 닿으면 바로 판정
+    if (!settled && !noHit && !reachedGoal) return;
     rememberLane();
     if (g.score >= goal(g.level)) { popup('NICE JOB!', '#6dff9e'); finish(true); return; }
     g.chances--;
@@ -294,7 +295,7 @@
   }
 
   let last = performance.now();
-  function loop(now) { const dt = Math.min(0.02, (now - last) / 1000); last = now; update(dt); draw(); requestAnimationFrame(loop); }
+  function loop(now) { const dt = Math.max(0, Math.min(0.02, (now - last) / 1000)); last = now; update(dt); draw(); requestAnimationFrame(loop); }
 
   function pos(e) { const r = cv.getBoundingClientRect(); return [(e.clientX - r.left) / r.width * cv.width, (e.clientY - r.top) / r.height * cv.height]; }
   cv.addEventListener('pointerdown', (e) => {
