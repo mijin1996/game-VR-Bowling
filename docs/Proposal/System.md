@@ -1,6 +1,6 @@
 # 시스템 — 레벨 · 투구 판정 · 공 · 핀 · 랭킹
 
-> 문서 세트: [목차](Proposal.md) · [컨셉](Concept.md) · **시스템** · [투구·개체](Combat_Entity.md) · [레벨 디자인](LevelDesign.md) · [밸런스](Balance.md) · [Suggestions](Suggestions.md)
+> 문서 세트: [목차](Proposal.md) · [컨셉](Concept.md) · **시스템** · [투구·개체](Combat_Entity.md) · [레벨 디자인](LevelDesign.md) · [밸런스](Balance.md) · [needFix](needFix.md)
 > 관련 코드: `LevelManager.cs` · `GameManager.cs` · `ButtonManager.cs` · `Ball.cs` · `BallSpawner.cs` · `Pin.cs` · `PinSpawner.cs` · `Ranking.cs` · `SoundManager.cs`
 
 ---
@@ -451,7 +451,7 @@ flowchart TB
   classDef bad fill:#A33A33,color:#fff,stroke:#A33A33
   classDef todo fill:#6B7280,color:#fff,stroke:#6B7280
 ```
-> 읽는 법: 주황 = 이런 상황이면? → 초록 ✅ 코드가 이미 처리함 / 빨강 ⚠️ 문제 (괄호 = Suggestions 번호) / 회색 💡 고치면 좋은 점. 아래 표에 같은 번호로 자세히 있어요.
+> 읽는 법: 주황 = 이런 상황이면? → 초록 ✅ 코드가 이미 처리함 / 빨강 ⚠️ 문제 (괄호 = needFix 번호) / 회색 💡 고치면 좋은 점. 아래 표에 같은 번호로 자세히 있어요.
 
 
 **[타임라인] 판정 중 연속 투구 (예외 #7)**
@@ -477,15 +477,15 @@ gantt
 | 4 | 시작하자마자 핀이 물리로 흔들려 쓰러짐 | 공이 올 때까지 고정 | ✅ |
 | 5 | 쓰러짐 조건 두 개를 동시에 만족 | `isFallen`으로 1번만 점수 | ✅ |
 | 6 | 판정 중에 또 던진 공 | 대기 투구로 쌓아 이어서 판정 | ✅ |
-| 7 | 판정 중 연속 투구 | 0.5초마다 새 공 → 여러 공의 핀이 판정 1번에 합쳐짐 | ⚠️ → [S-01](Suggestions.md) |
+| 7 | 판정 중 연속 투구 | 0.5초마다 새 공 → 여러 공의 핀이 판정 1번에 합쳐짐 | ⚠️ → [S-01](needFix.md) |
 | 8 | 판정 중 목표 도달 | 즉시 판정 | ✅ |
-| 9 | 30초 안에 못 던짐 | 남은 기회와 상관없이 MISS → 실패 판넬 | ⚠️ → [S-02](Suggestions.md) |
+| 9 | 30초 안에 못 던짐 | 남은 기회와 상관없이 MISS → 실패 판넬 | ⚠️ → [S-02](needFix.md) |
 | 10 | 실패 후 NEXT | 넘어가지 않고 "Current score not reached" 2초 | ✅ |
 | 11 | 숨긴 상태에서 공이 다시 나타남 | 숨길 때 재생성 예약 취소 | ✅ |
 | 12 | 일시정지 상태에서 RESTART · QUIT | timeScale 1로 되돌린 뒤 처리 | ✅ |
 | 13 | 0점 판 | 랭킹에 저장 안 함 | ✅ |
 | 14 | 사라진 매니저의 이벤트 | `OnDestroy`에서 구독 해제 | ✅ |
-| 15 | 헤드셋을 벗음 | 처리 없음 → 타이머 계속 | → [S-03](Suggestions.md) |
+| 15 | 헤드셋을 벗음 | 처리 없음 → 타이머 계속 | → [S-03](needFix.md) |
 | 16 | 레인 3개 중 아무 데나 침 | 판정은 같고, 판정 후 3세트 모두 다시 세움 | ✅ |
 
 ---

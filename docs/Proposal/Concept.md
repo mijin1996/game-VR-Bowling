@@ -1,6 +1,6 @@
 # 게임 컨셉 — VR Bowling (BowllyBoll)
 
-> 문서 세트: [목차](Proposal.md) · **컨셉** · [시스템](System.md) · [투구·개체](Combat_Entity.md) · [레벨 디자인](LevelDesign.md) · [밸런스](Balance.md) · [Suggestions](Suggestions.md)
+> 문서 세트: [목차](Proposal.md) · **컨셉** · [시스템](System.md) · [투구·개체](Combat_Entity.md) · [레벨 디자인](LevelDesign.md) · [밸런스](Balance.md) · [needFix](needFix.md)
 
 ---
 
@@ -109,11 +109,11 @@ flowchart TD
 | 이동 | 텔레포트 관련 컴포넌트 있음, 연속 이동 컴포넌트 없음 | `BowlingGame.unity` |
 | 조명 · 화면 | 천장 조명(Beat Sage 맵), URP Bloom | `BeatSageLights`, `docs/06_Bloom_형광효과.md` |
 
-> 실제 공간 배치는 VR 화면 · 씬 캡처로 넣어 주세요 → [S-08](Suggestions.md)
+> 실제 공간 배치는 VR 화면 · 씬 캡처로 넣어 주세요 → [S-08](needFix.md)
 
 ## 개발 현황
 | 구분 | 내용 |
 |---|---|
 | 구현됨 | 잡기 · 던지기 · 공 자동 회수 · 핀 고정 / 쓰러짐 판정 · 레벨 · 기회 · 제한 시간 · 판정 문구 · 결과 / 일시정지 판넬 · 랭킹 · 노래 선택 · 비트 조명 · Bloom |
 | 구조 | 제네릭 스포너 `Spawner<T>`, 인터페이스(`ISpawner`, `IReset`, `ITextPopEffect`), 매니저 역할 분리 + 이벤트 연결 |
-| 다음 할 일 | [Suggestions](Suggestions.md) |
+| 다음 할 일 | [needFix](needFix.md) |

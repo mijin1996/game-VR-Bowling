@@ -8,7 +8,7 @@
 
 ## 문서 구성
 컨셉 ~ 밸런스 문서는 **지금 프로젝트에 구현된 내용**(코드 · 씬 · 프리팹)과 그 값으로 계산한 것만 담았어요. 단, 컨셉의 **기획 의도**는 기획자가 정한 방향이에요.
-고쳐야 할 점 · 부족한 점 · 제안 · 정해야 할 항목은 모두 **Suggestions**에 있어요.
+고쳐야 할 점 · 부족한 점 · 제안 · 정해야 할 항목은 모두 **needFix**에 있어요.
 구현 방법 설명은 `docs/00 ~ 07`, 이 폴더는 기획 관점 문서예요.
 
 **[구성도] 문서 지도**
@@ -20,7 +20,7 @@ flowchart LR
   C3["Combat_Entity<br/>개체 스펙"]:::script
   C4["LevelDesign<br/>씬 구성 · 난이도"]:::script
   C5["Balance<br/>수치 · 계산 · JSON"]:::script
-  S6["Suggestions<br/>고칠 점 · 제안"]:::data
+  S6["needFix<br/>고칠 점 · 제안"]:::data
   SIM["../index.html<br/>시뮬레이션"]:::ui
   P --> C1
   P --> C2
@@ -44,7 +44,7 @@ flowchart LR
 | [투구 · 개체](Combat_Entity.md) | 개발 · 아트 |
 | [레벨 디자인](LevelDesign.md) | 기획 · 개발 |
 | [밸런스 · 데이터](Balance.md) · [JSON](Balance/) | 기획 · 개발 |
-| [Suggestions](Suggestions.md) | 모두 |
+| [needFix](needFix.md) | 모두 |
 | [시뮬레이션](../index.html) | 모두 |
 
 ---

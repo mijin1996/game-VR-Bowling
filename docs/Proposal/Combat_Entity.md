@@ -1,6 +1,6 @@
 # 투구 · 개체 (공 · 핀 · 판정 연출)
 
-> 문서 세트: [목차](Proposal.md) · [컨셉](Concept.md) · [시스템](System.md) · **투구·개체** · [레벨 디자인](LevelDesign.md) · [밸런스](Balance.md) · [Suggestions](Suggestions.md)
+> 문서 세트: [목차](Proposal.md) · [컨셉](Concept.md) · [시스템](System.md) · **투구·개체** · [레벨 디자인](LevelDesign.md) · [밸런스](Balance.md) · [needFix](needFix.md)
 > 볼링에는 "전투"가 없어서 이 자리에 핵심 조작(투구)과 상호작용 개체(공 · 핀)를 담았어요. 값은 씬 · 프리팹 기준.
 
 ---

@@ -1,6 +1,6 @@
 # 레벨 디자인 — 3레인 · 10레벨
 
-> 문서 세트: [목차](Proposal.md) · [컨셉](Concept.md) · [시스템](System.md) · [투구·개체](Combat_Entity.md) · **레벨 디자인** · [밸런스](Balance.md) · [Suggestions](Suggestions.md)
+> 문서 세트: [목차](Proposal.md) · [컨셉](Concept.md) · [시스템](System.md) · [투구·개체](Combat_Entity.md) · **레벨 디자인** · [밸런스](Balance.md) · [needFix](needFix.md)
 > 데이터: [`Balance/level_goal.json`](Balance/level_goal.json)
 
 ---
@@ -22,7 +22,7 @@
 
 어느 레인을 쳐도 판정은 같고, 판정 후 3세트 모두 다시 세움
 ```
-> 실제 레인 · 보관대 배치는 씬 캡처로 넣어 주세요 → [S-08](Suggestions.md)
+> 실제 레인 · 보관대 배치는 씬 캡처로 넣어 주세요 → [S-08](needFix.md)
 
 **[구성도] BowlingGame 씬 구성**
 ```mermaid
@@ -104,7 +104,7 @@ z -20.4   x 22.5 ~ 31.9  (오른쪽 = +x, 위 = +z)
 | 투구당 평균 필요 (4투구) | 1.3 | 2.5 | 3.8 | 5.0 | 6.3 | 7.5 | 8.8 | 10.0 | 11.3 | 12.5 |
 | 공 하나로 한 레인씩 | O | O | O | O | O | O | O | O (4투구 모두 10핀) | X | X |
 
-> 9 · 10레벨 목표 조정은 [S-04](Suggestions.md)
+> 9 · 10레벨 목표 조정은 [S-04](needFix.md)
 
 **[막대그래프] 레벨별 목표 점수**
 ```mermaid

@@ -1,6 +1,6 @@
 # 밸런스 · 데이터
 
-> 문서 세트: [목차](Proposal.md) · [컨셉](Concept.md) · [시스템](System.md) · [투구·개체](Combat_Entity.md) · [레벨 디자인](LevelDesign.md) · **밸런스** · [Suggestions](Suggestions.md)
+> 문서 세트: [목차](Proposal.md) · [컨셉](Concept.md) · [시스템](System.md) · [투구·개체](Combat_Entity.md) · [레벨 디자인](LevelDesign.md) · **밸런스** · [needFix](needFix.md)
 > 데이터 파일 (JSON · Unity `JsonUtility`로 바로 읽는 구조): [`rule_params.json`](Balance/rule_params.json) · [`level_goal.json`](Balance/level_goal.json)
 > 값은 `BowlingGame` 씬 · 프리팹에 저장된 실제 값 기준
 
