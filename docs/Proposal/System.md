@@ -60,7 +60,6 @@ flowchart LR
   classDef ui fill:#5A4A9E,color:#fff,stroke:#5A4A9E
   classDef data fill:#A33A33,color:#fff,stroke:#A33A33
 ```
-> 읽는 법: 상자 = 씬 · 스크립트 · 오브젝트, 화살표 위 글 = 보내는 신호나 하는 일이에요. ①②③은 일어나는 순서예요.
 
 ## 1. 화면 흐름
 씬은 `BowlingGame` 하나. 로비 · 플레이 · 판넬을 켜고 끄는 방식으로 전환해요 (씬을 다시 불러오지 않아 음악 · 조명이 이어짐).
@@ -98,7 +97,6 @@ stateDiagram-v2
   class Failed fail
   class Pause stop
 ```
-> 읽는 법: 상자 = 상태, 화살표 위 글 = 상태가 바뀌는 조건이에요. 검은 점에서 시작해요.
 
 **판넬 구성 (코드에 있는 요소)**
 **Result panel**
@@ -142,7 +140,6 @@ stateDiagram-v2
   class Failed fail
   class Cleared done
 ```
-> 읽는 법: 상자 = 상태, 화살표 위 글 = 상태가 바뀌는 조건이에요. 검은 점에서 시작해요.
 
 ## 3. 작동 로직
 ### 3-1. 레벨 시작 `StartLevel()`
@@ -168,7 +165,6 @@ flowchart TD
   classDef io fill:#5A4A9E,color:#fff,stroke:#5A4A9E
   classDef endc fill:#6B7280,color:#fff,stroke:#6B7280
 ```
-> 읽는 법: 초록에서 시작해 화살표를 따라 내려가요. 주황 마름모에서 Y(예) / N(아니오)으로 갈라져요.
 
 > 세부 조건(코드 기준)은 [부록 A-1](#a-1-레벨-시작-startlevel)에 있어요.
 
@@ -229,7 +225,6 @@ flowchart TD
   classDef io fill:#5A4A9E,color:#fff,stroke:#5A4A9E
   classDef endc fill:#6B7280,color:#fff,stroke:#6B7280
 ```
-> 읽는 법: 초록에서 시작해 화살표를 따라 내려가요. 주황 마름모에서 Y(예) / N(아니오)으로 갈라져요.
 
 ```
 case A: 핀이 쓰러짐
@@ -283,7 +278,6 @@ flowchart TD
   classDef io fill:#5A4A9E,color:#fff,stroke:#5A4A9E
   classDef endc fill:#6B7280,color:#fff,stroke:#6B7280
 ```
-> 읽는 법: 초록에서 시작해 화살표를 따라 내려가요. 주황 마름모에서 Y(예) / N(아니오)으로 갈라져요.
 
 ```
 (위에서 본 모습, 보관대 1개)
@@ -339,7 +333,6 @@ flowchart TD
   classDef io fill:#5A4A9E,color:#fff,stroke:#5A4A9E
   classDef endc fill:#6B7280,color:#fff,stroke:#6B7280
 ```
-> 읽는 법: 초록에서 시작해 화살표를 따라 내려가요. 주황 마름모에서 Y(예) / N(아니오)으로 갈라져요.
 
 **고정 해제 (공이 오기 전에는 물리를 꺼 둠)**
 ```
@@ -387,7 +380,6 @@ flowchart TD
   classDef io fill:#5A4A9E,color:#fff,stroke:#5A4A9E
   classDef endc fill:#6B7280,color:#fff,stroke:#6B7280
 ```
-> 읽는 법: 초록에서 시작해 화살표를 따라 내려가요. 주황 마름모에서 Y(예) / N(아니오)으로 갈라져요.
 
 > 세부 조건(코드 기준)은 [부록 A-5](#a-5-랭킹-ranking)에 있어요.
 
@@ -416,7 +408,6 @@ flowchart TD
   classDef io fill:#5A4A9E,color:#fff,stroke:#5A4A9E
   classDef endc fill:#6B7280,color:#fff,stroke:#6B7280
 ```
-> 읽는 법: 초록에서 시작해 화살표를 따라 내려가요. 주황 마름모에서 Y(예) / N(아니오)으로 갈라져요.
 
 > 세부 조건(코드 기준)은 [부록 A-6](#a-6-일시정지)에 있어요.
 
@@ -460,7 +451,6 @@ flowchart TB
   classDef bad fill:#A33A33,color:#fff,stroke:#A33A33
   classDef todo fill:#6B7280,color:#fff,stroke:#6B7280
 ```
-> 읽는 법: 주황 = 이런 상황이면? → 초록 ✅ 코드가 이미 처리함 / 빨강 ⚠️ 문제 (괄호 = needFix 번호) / 회색 💡 고치면 좋은 점. 아래 표에 같은 번호로 자세히 있어요.
 
 **[타임라인] 판정 중 연속 투구 (예외 #7)**
 ```mermaid
@@ -475,7 +465,6 @@ gantt
   공 2 던짐 (판정 중) :crit, milestone, b2, 500, 0ms
   공 3 던짐 (판정 중) :crit, milestone, b3, 1000, 0ms
 ```
-> 읽는 법: 판정이 끝나기 전에 0.5초마다 새 공을 던질 수 있어서, 여러 공의 핀이 판정 1번에 합쳐져요. 왼쪽 → 오른쪽이 시간이에요. 막대 = 이어지는 동안, 마름모 = 그 순간. 빨간 막대는 위험하거나 못 움직이는 시간이에요.
 
 | # | 상황 | 현재 동작 | 상태 |
 |---|---|---|---|
