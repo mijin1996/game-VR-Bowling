@@ -72,7 +72,6 @@ mindmap
       Beat Sage 맵
       천장 조명 깜빡임
 ```
-> 읽는 법: 가운데 = 게임, 가지 = 재미 요소, 끝 = 근거가 되는 수치예요.
 
 ## 코어 루프
 
@@ -107,7 +106,6 @@ flowchart TD
   classDef io fill:#5A4A9E,color:#fff,stroke:#5A4A9E
   classDef endc fill:#6B7280,color:#fff,stroke:#6B7280
 ```
-> 읽는 법: 초록에서 시작해 화살표를 따라 내려가요. 주황 마름모에서 Y(예) / N(아니오)으로 갈라져요.
 
 ## VR 구성
 | 항목 | 내용 | 근거 |
