@@ -1,8 +1,8 @@
 # 용어집 — VR Bowling
 
-> 문서 세트: [목차](Proposal.md) · 공통 관리: **용어집** · [결정 로그](Decisions.md) · [needFix](needFix.md)
+> 문서 세트: [목차](Index.md) · 공통 관리: **용어집** · [결정 로그](Decisions.md) · [needFix](needFix.md)
 
-> **문서 정보** · 문서 번호 `D00-TERM` · 버전 v1.0 · 상태 `Review` · 담당 기획자 · 최종 수정 2026-11-21 · 관련 문서 [목차](Proposal.md)
+> **문서 정보** · 문서 번호 `D00-TERM` · 버전 v1.0 · 상태 `Review` · 담당 기획자 · 최종 수정 2026-11-21 · 관련 문서 [목차](Index.md)
 
 **변경 이력**
 

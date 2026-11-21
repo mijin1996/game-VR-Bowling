@@ -2,7 +2,7 @@
 
 > 문서 세트: **목차** · 기획: [컨셉](기획/Concept.md) · [시스템](기획/System.md) · [전투·개체](기획/Combat_Entity.md) · [레벨 디자인](기획/LevelDesign.md) · [밸런스](기획/Balance.md) · 사업·운영: [사업 검토](대표/Business.md) · [요구사항·로드맵](기획/Requirements.md) · [Business Model](기획/Monetization.md) · [서버·데이터](개발/Server_Data.md) · [리소스](디자인/Resources.md) · [로그·지표](기획/Analytics.md) · [QA·출시](QA/QA_Release.md) · [라이브 운영](운영/LiveOps.md) · [사업화·법무](대표/Business_Legal.md) · [needFix](needFix.md)
 
-> **문서 정보** · 문서 번호 `D00-INDEX` · 버전 v1.2 · 상태 `Review` · 담당 기획자 · 최종 수정 2026-11-21
+> **문서 정보** · 문서 번호 `D00-INDEX` · 버전 v1.3 · 상태 `Review` · 담당 기획자 · 최종 수정 2026-11-22
 
 **변경 이력**
 
@@ -12,6 +12,7 @@
 | v1.0 | 2026-11-21 | 문서 정보 · 변경 이력 · 문서 번호 추가, 사업 · 운영 문서와 연결 | — | 기획자 | 문서만 |
 | v1.1 | 2026-11-21 | 공통 관리 문서(용어집 · 결정 로그) 연결, 단계별 Gate 추가 | 기업용 기획 가이드 흐름 | 기획자 | 문서만 |
 | v1.2 | 2026-11-21 | 문서를 담당 직무별 폴더로 나눔 (링크 경로 갱신) | 담당자가 자기 문서를 찾기 쉽게 | 기획자 | 문서 위치 |
+| v1.3 | 2026-11-22 | 파일 이름 Proposal.md → Index.md (링크 경로 갱신) | 목차 · 안내 문서임을 이름에 드러냄 | 기획자 | 문서 위치 |
 
 > **분류:** VR 게임 (6DoF 헤드셋, Oculus · Windows MR 설정) · **장르:** 레벨제 아케이드 볼링 + 음악 조명
 > **엔진:** Unity 6 (6000.3.26f1) · C# · XR Interaction Toolkit 3.x · URP
@@ -54,7 +55,7 @@
 **[구성도] 문서 지도**
 ```mermaid
 flowchart LR
-  P["Proposal.md<br/>목차 · 그림 규칙"]:::scene
+  P["Index.md<br/>목차 · 그림 규칙"]:::scene
   subgraph G1["① 게임 기획 (만드는 것)"]
     direction TB
     D01_CONCEPT["컨셉<br/>D01-CONCEPT"]:::script

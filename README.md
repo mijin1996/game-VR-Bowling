@@ -50,5 +50,5 @@
 ---
 
 ## 📁 문서
-- [`docs/Proposal/Proposal.md`](docs/Proposal/Proposal.md) — 기획서 (컨셉 ~ 사업화 · 법무) · [needFix](docs/Proposal/needFix.md)
+- [`docs/Proposal/Index.md`](docs/Proposal/Index.md) — 기획서 (컨셉 ~ 사업화 · 법무) · [needFix](docs/Proposal/needFix.md)
 - [`docs/00_README.md`](docs/00_README.md) — 문서 모음 목차 (규칙·설정 가이드·코드 구조)

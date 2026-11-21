@@ -1,6 +1,6 @@
 # 라이브 운영 — VR Bowling (BowllyBoll)
 
-> 문서 세트: [목차](../Proposal.md) · 기획: [컨셉](../기획/Concept.md) · [시스템](../기획/System.md) · [전투·개체](../기획/Combat_Entity.md) · [레벨 디자인](../기획/LevelDesign.md) · [밸런스](../기획/Balance.md) · 사업·운영: [사업 검토](../대표/Business.md) · [요구사항·로드맵](../기획/Requirements.md) · [Business Model](../기획/Monetization.md) · [서버·데이터](../개발/Server_Data.md) · [리소스](../디자인/Resources.md) · [로그·지표](../기획/Analytics.md) · [QA·출시](../QA/QA_Release.md) · **라이브 운영** · [사업화·법무](../대표/Business_Legal.md) · [needFix](../needFix.md)
+> 문서 세트: [목차](../Index.md) · 기획: [컨셉](../기획/Concept.md) · [시스템](../기획/System.md) · [전투·개체](../기획/Combat_Entity.md) · [레벨 디자인](../기획/LevelDesign.md) · [밸런스](../기획/Balance.md) · 사업·운영: [사업 검토](../대표/Business.md) · [요구사항·로드맵](../기획/Requirements.md) · [Business Model](../기획/Monetization.md) · [서버·데이터](../개발/Server_Data.md) · [리소스](../디자인/Resources.md) · [로그·지표](../기획/Analytics.md) · [QA·출시](../QA/QA_Release.md) · **라이브 운영** · [사업화·법무](../대표/Business_Legal.md) · [needFix](../needFix.md)
 
 > **문서 정보** · 문서 번호 `D12-LIVE` · 버전 v1.0 · 상태 `Draft` · 담당 운영 담당 · 최종 수정 2026-11-21 · 관련 문서 [로그·지표](../기획/Analytics.md)
 
