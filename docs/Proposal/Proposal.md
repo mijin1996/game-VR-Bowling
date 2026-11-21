@@ -1,15 +1,15 @@
 # VR Bowling (BowllyBoll) — 기획서 목차
 
-> 문서 세트: **목차** · 기획: [컨셉](Concept.md) · [시스템](System.md) · [전투·개체](Combat_Entity.md) · [레벨 디자인](LevelDesign.md) · [밸런스](Balance.md) · 사업·운영: [사업 검토](Business.md) · [요구사항·로드맵](Requirements.md) · [BM·경제](Monetization.md) · [서버·데이터](Server_Data.md) · [리소스](Resources.md) · [로그·지표](Analytics.md) · [QA·출시](QA_Release.md) · [라이브 운영](LiveOps.md) · [사업화·법무](Business_Legal.md) · [needFix](needFix.md)
+> 문서 세트: **목차** · 기획: [컨셉](Concept.md) · [시스템](System.md) · [전투·개체](Combat_Entity.md) · [레벨 디자인](LevelDesign.md) · [밸런스](Balance.md) · 사업·운영: [사업 검토](Business.md) · [요구사항·로드맵](Requirements.md) · [Business Model](Monetization.md) · [서버·데이터](Server_Data.md) · [리소스](Resources.md) · [로그·지표](Analytics.md) · [QA·출시](QA_Release.md) · [라이브 운영](LiveOps.md) · [사업화·법무](Business_Legal.md) · [needFix](needFix.md)
 
-> **문서 정보** · ID `D00-INDEX` · v1.0 · 상태 `Review` · Owner ME (기획 · 개발) · 최종 수정 2026-11-21
+> **문서 정보** · 문서 번호 `D00-INDEX` · 버전 v1.0 · 상태 `Review` · 담당 기획자 · 최종 수정 2026-11-21
 
 **변경 이력**
 
 | 버전 | 날짜 | 변경 내용 | 사유 | 결정자 | 영향 범위 |
 |---|---|---|---|---|---|
-| v0.9 | 2026-11-20 | 기존 문서 (자세한 기록은 git 커밋) | — | ME | — |
-| v1.0 | 2026-11-21 | 문서 정보 · 변경 이력 · 문서 ID 추가, 문서 세트에 사업·운영 문서 연결 | 사내 문서 기준 v3 적용 | ME | 문서만 (게임 코드 · 데이터 변경 없음) |
+| v0.9 | 2026-11-20 | 기존 문서 (자세한 기록은 git 커밋) | — | 기획자 | — |
+| v1.0 | 2026-11-21 | 문서 정보 · 변경 이력 · 문서 번호 추가, 사업 · 운영 문서와 연결 | — | 기획자 | 문서만 |
 
 > **분류:** VR 게임 (6DoF 헤드셋, Oculus · Windows MR 설정) · **장르:** 레벨제 아케이드 볼링 + 음악 조명
 > **엔진:** Unity 6 (6000.3.26f1) · C# · XR Interaction Toolkit 3.x · URP
@@ -18,8 +18,6 @@
 ---
 
 ## 문서 구성
-이 폴더는 **실제로 출시 · 운영하는 회사 기준(사내 문서 기준 v3)**으로 정리돼 있어요.
-
 - **① 게임 기획** 문서(컨셉 ~ 밸런스)는 **지금 프로젝트에 구현된 내용**(코드 · 씬 · 프리팹 · 데이터)과 그 값으로 계산한 것만 담아요. 단, 컨셉의 **기획 의도**는 기획자가 정한 방향이에요.
 - **② 사업 · 운영** 문서는 출시 · 매출 · 운영을 위한 **계획(초안)**이에요. 상태가 `Draft`인 문서는 아직 정해지지 않은 내용이 있고, 정할 것은 needFix에 모여 있어요.
 - 고쳐야 할 점 · 부족한 점 · 제안 · 정해야 할 항목은 모두 **[needFix](needFix.md)**에 있어요.
@@ -28,7 +26,22 @@
 
 | 규칙 | 내용 |
 |---|---|
-| 문서 정보 | 맨 위에 ID · 버전 · 상태 · Owner · 최종 수정일 |
+| 문서 정보 | 맨 위에 문서 번호 · 버전 · 상태 · 담당 · 최종 수정일 · 관련 문서(링크) |
+| 문서 번호 | `D` + 문서 순서 + 이름 (예: `D08-SERVER` = 8번 서버 · 데이터 문서). 번호 ↔ 파일은 아래 표에서 찾아요 |
+| 버전 | v1.0 = 첫 정식판, 내용을 고칠 때마다 v1.1 · v1.2 … |
+| 담당 | 그 문서를 책임지고 확인하는 직무 (대표 · 기획자 · PM · 개발자 · 디자이너 · 아티스트 · QA · 운영 담당) |
+
+**번호 찾는 곳** — 문서 안의 번호를 누르면 그 번호가 정해진 문서로 가요.
+
+| 번호 모양 | 뜻 | 정해진 문서 |
+|---|---|---|
+| `REQ_###` | 요구사항 (할 일) | [Requirements.md](Requirements.md) |
+| `S-##` | 고칠 점 · 제안 (게임 기존 목록) | [needFix.md](needFix.md) |
+| `F-##` | 정할 것 | [needFix.md](needFix.md) |
+| `TC_###` | 테스트 케이스 | [QA_Release.md](QA_Release.md) |
+| `PRD_…` · `PLAN_…` · `AD_…` | 상품 · 요금제 · 광고 자리 | [Monetization.md](Monetization.md) |
+| `evt_…` | 로그 이벤트 | [Analytics.md](Analytics.md) |
+| `MDL_…` · `SFX_…` · `FONT_…` 등 | 리소스 (그림 · 소리 · 폰트) | [Resources.md](Resources.md) |
 | 상태 | `Draft`(작성 중) → `Review`(검토 중) → `Confirmed`(구현 대상) → `Deprecated`(폐기). **Confirmed만 구현해요** |
 | 변경 이력 | 문서 정보 바로 아래. 무엇이 · 왜 · 어디에 영향이 가는지 |
 | ID | 한 번 정하면 바꾸지 않아요. 코드 · JSON · 로그 · 스토어 상품이 같은 ID를 써요 |
@@ -50,7 +63,7 @@ flowchart LR
     direction TB
     D01_BIZ["사업 검토<br/>D01-BIZ"]:::obj
     D02_REQ["요구사항·로드맵<br/>D02-REQ"]:::obj
-    D07_BM["BM·경제<br/>D07-BM"]:::obj
+    D07_BM["Business Model<br/>D07-BM"]:::obj
     D08_SERVER["서버·데이터<br/>D08-SERVER"]:::obj
     D09_RES["리소스<br/>D09-RES"]:::obj
     D10_LOG["로그·지표<br/>D10-LOG"]:::obj
@@ -74,23 +87,23 @@ flowchart LR
 ```
 > 읽는 법: 왼쪽 목차에서 ① 게임 기획 · ② 사업 · 운영 문서로 이어져요. 두 묶음에서 나온 문제 · 정할 것은 빨강 needFix로 모여요. 보라 = 시뮬레이션이에요.
 
-| 문서 | ID | 단계 | 상태 | 주로 보는 사람 |
+| 문서 | 문서 번호 | 단계 | 상태 | 담당 |
 |---|---|---|---|---|
-| [컨셉](Concept.md) | `D01-CONCEPT` | P0 | `Review` | 모두 |
-| [시스템](System.md) | `D03-SYSTEM` | P1 | `Review` | 개발 |
-| [전투·개체](Combat_Entity.md) | `D04-ENTITY` | P1 | `Review` | 개발 · 아트 |
-| [레벨 디자인](LevelDesign.md) | `D05-LEVEL` | P2 | `Review` | 기획 · 개발 |
-| [밸런스](Balance.md) | `D06-BAL` | P1 ~ P4 | `Review` | 기획 · 개발 |
-| [사업 검토](Business.md) | `D01-BIZ` | P0 | `Draft` | 대표 · 모두 |
-| [요구사항·로드맵](Requirements.md) | `D02-REQ` | P1 ~ | `Draft` | 기획 · 개발 |
-| [BM·경제](Monetization.md) | `D07-BM` | P1 | `Draft` | 대표 · 기획 · 개발 |
-| [서버·데이터](Server_Data.md) | `D08-SERVER` | P1 | `Draft` | 개발 |
-| [리소스](Resources.md) | `D09-RES` | P2 | `Draft` | 아트 · 사운드 · 개발 |
-| [로그·지표](Analytics.md) | `D10-LOG` | P2 | `Draft` | 기획 · 개발 |
-| [QA·출시](QA_Release.md) | `D11-QA` | P2 ~ P3 | `Draft` | 모두 |
-| [라이브 운영](LiveOps.md) | `D12-LIVE` | P3 ~ P4 | `Draft` | 대표 · 기획 |
+| [컨셉](Concept.md) | `D01-CONCEPT` | P0 | `Review` | 기획자 |
+| [시스템](System.md) | `D03-SYSTEM` | P1 | `Review` | 기획자 · 클라이언트 개발자 |
+| [전투·개체](Combat_Entity.md) | `D04-ENTITY` | P1 | `Review` | 기획자 · 아티스트 |
+| [레벨 디자인](LevelDesign.md) | `D05-LEVEL` | P2 | `Review` | 레벨 디자이너 |
+| [밸런스](Balance.md) | `D06-BAL` | P1 ~ P4 | `Review` | 밸런스 기획자 |
+| [사업 검토](Business.md) | `D01-BIZ` | P0 | `Draft` | 대표 · 기획자 |
+| [요구사항·로드맵](Requirements.md) | `D02-REQ` | P1 ~ | `Draft` | 기획자 |
+| [Business Model](Monetization.md) | `D07-BM` | P1 | `Draft` | 기획자 · 대표 |
+| [서버·데이터](Server_Data.md) | `D08-SERVER` | P1 | `Draft` | 서버 개발자 |
+| [리소스](Resources.md) | `D09-RES` | P2 | `Draft` | 아티스트 · 사운드 디자이너 |
+| [로그·지표](Analytics.md) | `D10-LOG` | P2 | `Draft` | 기획자 · 클라이언트 개발자 |
+| [QA·출시](QA_Release.md) | `D11-QA` | P2 ~ P3 | `Draft` | QA |
+| [라이브 운영](LiveOps.md) | `D12-LIVE` | P3 ~ P4 | `Draft` | 운영 담당 |
 | [사업화·법무](Business_Legal.md) | `D13-LEGAL` | P0 ~ P3 | `Draft` | 대표 |
-| [needFix](needFix.md) | `D00-FIX` | — | `Review` | 모두 |
+| [needFix](needFix.md) | `D00-FIX` | — | `Review` | 기획자 |
 | [시뮬레이션](../index.html) | — | — | — | 모두 |
 
 **단계별 문서 지도**
