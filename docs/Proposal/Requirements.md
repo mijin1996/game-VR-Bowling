@@ -1,14 +1,14 @@
 # 요구사항 · 로드맵 — VR Bowling (BowllyBoll)
 
-> 문서 세트: [목차](Proposal.md) · 기획: [컨셉](Concept.md) · [시스템](System.md) · [전투·개체](Combat_Entity.md) · [레벨 디자인](LevelDesign.md) · [밸런스](Balance.md) · 사업·운영: [사업 검토](Business.md) · **요구사항·로드맵** · [BM·경제](Monetization.md) · [서버·데이터](Server_Data.md) · [리소스](Resources.md) · [로그·지표](Analytics.md) · [QA·출시](QA_Release.md) · [라이브 운영](LiveOps.md) · [사업화·법무](Business_Legal.md) · [needFix](needFix.md)
+> 문서 세트: [목차](Proposal.md) · 기획: [컨셉](Concept.md) · [시스템](System.md) · [전투·개체](Combat_Entity.md) · [레벨 디자인](LevelDesign.md) · [밸런스](Balance.md) · 사업·운영: [사업 검토](Business.md) · **요구사항·로드맵** · [Business Model](Monetization.md) · [서버·데이터](Server_Data.md) · [리소스](Resources.md) · [로그·지표](Analytics.md) · [QA·출시](QA_Release.md) · [라이브 운영](LiveOps.md) · [사업화·법무](Business_Legal.md) · [needFix](needFix.md)
 
-> **문서 정보** · ID `D02-REQ` · v1.0 · 상태 `Draft` · Owner ME (기획 · 개발) · 최종 수정 2026-11-21 · 관련 `needFix`
+> **문서 정보** · 문서 번호 `D02-REQ` · 버전 v1.0 · 상태 `Draft` · 담당 기획자 · 최종 수정 2026-11-21 · 관련 문서 [needFix](needFix.md)
 
 **변경 이력**
 
 | 버전 | 날짜 | 변경 내용 | 사유 | 결정자 | 영향 범위 |
 |---|---|---|---|---|---|
-| v1.0 | 2026-11-21 | 최초 작성 | 사내 문서 기준 v3 적용 | ME | 문서만 |
+| v1.0 | 2026-11-21 | 최초 작성 | — | 기획자 | — |
 
 ---
 
@@ -18,24 +18,24 @@
 ## 2. 이미 구현된 것
 | ID | 기능 | 근거 문서 | 상태 |
 |---|---|---|---|
-| `REQ_001` | 공 잡기 · 던지기 (XR 물리) | [시스템](System.md) · [전투 · 개체](Combat_Entity.md) | 완료 (손맛 S-12) |
-| `REQ_002` | 레인 3개 · 핀 판정 · 다시 세우기 | [레벨 디자인](LevelDesign.md) | 완료 (꺼진 4번째 세트 S-11) |
-| `REQ_003` | 레벨 10개 · 목표 점수 · 30초 · ONE MORE | [밸런스](Balance.md) | 완료 (S-01 · S-02) |
+| `REQ_001` | 공 잡기 · 던지기 (XR 물리) | [시스템](System.md) · [전투 · 개체](Combat_Entity.md) | 완료 (손맛 [S-12](needFix.md)) |
+| `REQ_002` | 레인 3개 · 핀 판정 · 다시 세우기 | [레벨 디자인](LevelDesign.md) | 완료 (꺼진 4번째 세트 [S-11](needFix.md)) |
+| `REQ_003` | 레벨 10개 · 목표 점수 · 30초 · ONE MORE | [밸런스](Balance.md) | 완료 ([S-01](needFix.md) · [S-02](needFix.md)) |
 | `REQ_004` | 노래 선택 · 박자 조명 (Bloom) | [시스템](System.md) | 완료 |
 
 ## 3. 출시까지 할 일
 | ID | 기능 | 우선순위 | 마일스톤 | 공수 | 관련 | 상태 |
 |---|---|---|---|---|---|---|
-| `REQ_100` | **저작권 곡(let-it-work) 제거 · 대체곡, 맑은 고딕 교체** | Must | 알파 | 1일 | F-03 | ⚠️ 대기 |
-| `REQ_101` | 판정 중 연속 투구 정리 | Must | 알파 | 1일 | S-01 | 대기 |
-| `REQ_102` | 시간 초과 시 기회 -1 (기회 남으면 계속) | Must | 알파 | 0.5일 | S-02 | 대기 |
-| `REQ_103` | 헤드셋 해제 시 일시정지 | Must | 알파 | 0.5일 | S-03 | 대기 |
-| `REQ_104` | 꺼진 핀 세트 · 4번째 카운트다운 정리 | Must | 알파 | 0.5일 | S-11 | 대기 |
-| `REQ_105` | 던지기 손맛 (스윙 → 힘 · 방향, 공 무게감) | Must | 베타 | 3일 | S-12 | 대기 |
-| `REQ_106` | 목표 점수 곡선 확정 (투구당 평균 핀 수 측정 후) | Must | 베타 | 1일 + 테스트 | S-04 · S-10 | 대기 |
-| `REQ_107` | 스트라이크 · 스페어 보너스 (ON BEAT 제외) | Must | 베타 | 1일 | S-05 | 대기 |
-| `REQ_108` | 기회 규칙 한 표로 정리 · 화면 안내 | Should | 베타 | 0.5일 | S-13 | 대기 |
-| `REQ_109` | 레벨 기믹 1 ~ 2종 | Should | 베타 | 3일 | S-06 | 대기 |
+| `REQ_100` | **저작권 곡(let-it-work) 제거 · 대체곡, 맑은 고딕 교체** | Must | 알파 | 1일 | [F-03](needFix.md) | ⚠️ 대기 |
+| `REQ_101` | 판정 중 연속 투구 정리 | Must | 알파 | 1일 | [S-01](needFix.md) | 대기 |
+| `REQ_102` | 시간 초과 시 기회 -1 (기회 남으면 계속) | Must | 알파 | 0.5일 | [S-02](needFix.md) | 대기 |
+| `REQ_103` | 헤드셋 해제 시 일시정지 | Must | 알파 | 0.5일 | [S-03](needFix.md) | 대기 |
+| `REQ_104` | 꺼진 핀 세트 · 4번째 카운트다운 정리 | Must | 알파 | 0.5일 | [S-11](needFix.md) | 대기 |
+| `REQ_105` | 던지기 손맛 (스윙 → 힘 · 방향, 공 무게감) | Must | 베타 | 3일 | [S-12](needFix.md) | 대기 |
+| `REQ_106` | 목표 점수 곡선 확정 (투구당 평균 핀 수 측정 후) | Must | 베타 | 1일 + 테스트 | [S-04](needFix.md) · [S-10](needFix.md) | 대기 |
+| `REQ_107` | 스트라이크 · 스페어 보너스 (ON BEAT 제외) | Must | 베타 | 1일 | [S-05](needFix.md) | 대기 |
+| `REQ_108` | 기회 규칙 한 표로 정리 · 화면 안내 | Should | 베타 | 0.5일 | [S-13](needFix.md) | 대기 |
+| `REQ_109` | 레벨 기믹 1 ~ 2종 | Should | 베타 | 3일 | [S-06](needFix.md) | 대기 |
 | `REQ_110` | 별 1 ~ 3개 · 실패 이유 결과 화면 · 레벨 기록 저장 | Must | 베타 | 1.5일 | needFix §7 | 대기 |
 | `REQ_111` | VR 편의 · 안전 (앉아서 · 높이 보정 · 시작 안내) | Must | 베타 | 2일 | [QA](QA_Release.md) §4 | 대기 |
 | `REQ_112` | 로그 이벤트 | Should | 베타 | 1일 | [로그](Analytics.md) | 대기 |
