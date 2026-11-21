@@ -1,14 +1,14 @@
-# BM · 경제 — VR Bowling (BowllyBoll)
+# Business Model — VR Bowling (BowllyBoll)
 
-> 문서 세트: [목차](Proposal.md) · 기획: [컨셉](Concept.md) · [시스템](System.md) · [전투·개체](Combat_Entity.md) · [레벨 디자인](LevelDesign.md) · [밸런스](Balance.md) · 사업·운영: [사업 검토](Business.md) · [요구사항·로드맵](Requirements.md) · **BM·경제** · [서버·데이터](Server_Data.md) · [리소스](Resources.md) · [로그·지표](Analytics.md) · [QA·출시](QA_Release.md) · [라이브 운영](LiveOps.md) · [사업화·법무](Business_Legal.md) · [needFix](needFix.md)
+> 문서 세트: [목차](Proposal.md) · 기획: [컨셉](Concept.md) · [시스템](System.md) · [전투·개체](Combat_Entity.md) · [레벨 디자인](LevelDesign.md) · [밸런스](Balance.md) · 사업·운영: [사업 검토](Business.md) · [요구사항·로드맵](Requirements.md) · **Business Model** · [서버·데이터](Server_Data.md) · [리소스](Resources.md) · [로그·지표](Analytics.md) · [QA·출시](QA_Release.md) · [라이브 운영](LiveOps.md) · [사업화·법무](Business_Legal.md) · [needFix](needFix.md)
 
-> **문서 정보** · ID `D07-BM` · v1.0 · 상태 `Draft` · Owner ME (기획 · 개발) · 최종 수정 2026-11-21 · 관련 `D06-BAL`, `D08-SERVER`
+> **문서 정보** · 문서 번호 `D07-BM` · 버전 v1.0 · 상태 `Draft` · 담당 기획자 · 대표 · 최종 수정 2026-11-21 · 관련 문서 [밸런스](Balance.md) · [서버·데이터](Server_Data.md)
 
 **변경 이력**
 
 | 버전 | 날짜 | 변경 내용 | 사유 | 결정자 | 영향 범위 |
 |---|---|---|---|---|---|
-| v1.0 | 2026-11-21 | 최초 작성 | 사내 문서 기준 v3 적용 | ME | 문서만 |
+| v1.0 | 2026-11-21 | 최초 작성 | — | 기획자 | — |
 
 ---
 
@@ -27,7 +27,7 @@
 ## 3. 가격 (제안)
 | 상품 ID | 이름 | 가격 | 구성 |
 |---|---|---|---|
-| `PRD_BASE` | 본편 | ₩5,500 ~ ₩9,900 (경쟁작 조사 후 확정 → F-04) | 10레벨 · 곡 n개 |
+| `PRD_BASE` | 본편 | ₩5,500 ~ ₩9,900 (경쟁작 조사 후 확정 → [F-04](needFix.md)) | 10레벨 · 곡 n개 |
 | `PRD_LEVELPACK_001` | 레벨 팩 1 (출시 후) | ₩2,200 | 기믹 레벨 5개 |
 
 > 분량 기준: 레벨당 약 1 ~ 2분 × 10레벨 + 별점 재도전 → 약 1 ~ 2시간.
