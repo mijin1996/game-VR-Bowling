@@ -1,6 +1,6 @@
 # 레벨 디자인 — 3레인 · 10레벨
 
-> 문서 세트: [목차](Proposal.md) · 기획: [컨셉](Concept.md) · [시스템](System.md) · [전투·개체](Combat_Entity.md) · **레벨 디자인** · [밸런스](Balance.md) · 사업·운영: [사업 검토](Business.md) · [요구사항·로드맵](Requirements.md) · [Business Model](Monetization.md) · [서버·데이터](Server_Data.md) · [리소스](Resources.md) · [로그·지표](Analytics.md) · [QA·출시](QA_Release.md) · [라이브 운영](LiveOps.md) · [사업화·법무](Business_Legal.md) · [needFix](needFix.md)
+> 문서 세트: [목차](../Proposal.md) · 기획: [컨셉](Concept.md) · [시스템](System.md) · [전투·개체](Combat_Entity.md) · **레벨 디자인** · [밸런스](Balance.md) · 사업·운영: [사업 검토](../대표/Business.md) · [요구사항·로드맵](Requirements.md) · [Business Model](Monetization.md) · [서버·데이터](../개발/Server_Data.md) · [리소스](../디자인/Resources.md) · [로그·지표](Analytics.md) · [QA·출시](../QA/QA_Release.md) · [라이브 운영](../운영/LiveOps.md) · [사업화·법무](../대표/Business_Legal.md) · [needFix](../needFix.md)
 > 데이터: [`Balance/level_goal.json`](Balance/level_goal.json)
 
 > **문서 정보** · 문서 번호 `D05-LEVEL` · 버전 v1.0 · 상태 `Review` · 담당 레벨 디자이너 · 최종 수정 2026-11-21 · 관련 문서 [밸런스](Balance.md)
@@ -31,7 +31,7 @@
 
 어느 레인을 쳐도 판정은 같고, 판정 후 3세트 모두 다시 세움
 ```
-> 실제 레인 · 보관대 배치는 씬 캡처로 넣어 주세요 → [S-08](needFix.md)
+> 실제 레인 · 보관대 배치는 씬 캡처로 넣어 주세요 → [S-08](../needFix.md)
 
 **[구성도] BowlingGame 씬 구성**
 ```mermaid
@@ -111,7 +111,7 @@ z -20.4   x 22.5 ~ 31.9  (오른쪽 = +x, 위 = +z)
 | 투구당 평균 필요 (4투구) | 1.3 | 2.5 | 3.8 | 5.0 | 6.3 | 7.5 | 8.8 | 10.0 | 11.3 | 12.5 |
 | 공 하나로 한 레인씩 | O | O | O | O | O | O | O | O (4투구 모두 10핀) | X | X |
 
-> 9 · 10레벨 목표 조정은 [S-04](needFix.md)
+> 9 · 10레벨 목표 조정은 [S-04](../needFix.md)
 
 **[막대그래프] 레벨별 목표 점수**
 ```mermaid

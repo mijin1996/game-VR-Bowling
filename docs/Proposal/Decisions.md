@@ -21,6 +21,6 @@
 | DEC_001 | 2026-11-21 | 기획 문서는 기업용 기획 가이드 기준으로 `docs/Proposal/`에 둔다 | 서비스 출시 · 사업자 등록까지 쓰는 사내 문서, 모든 프로젝트 위치 통일 | 포트폴리오용 문서 | 대표 | [목차](Proposal.md) | `Confirmed` |
 | DEC_002 | 2026-11-21 | 고칠 점 · 정할 것은 `needFix.md` 한 곳에 모은다 (Suggestions에서 이름 변경) | 흩어지면 누가 언제 정할지 놓침 | 문서마다 따로 적기 | 대표 | [needFix](needFix.md) | `Confirmed` |
 | DEC_003 | 2026-11-21 | 설정 · 콘텐츠 데이터 원본은 JSON | 코드 · 엔진이 바로 읽고 검증 규칙(JSON Schema)을 붙이기 쉬움 | CSV | 대표 | [목차](Proposal.md) | `Confirmed` |
-| DEC_004 | 2026-11-21 | 수익 모델 문서 이름은 "Business Model" (BM 약어 쓰지 않음) | 약어는 처음 보는 사람이 모름 | BM | 대표 | [Business Model](Monetization.md) | `Confirmed` |
+| DEC_004 | 2026-11-21 | 수익 모델 문서 이름은 "Business Model" (BM 약어 쓰지 않음) | 약어는 처음 보는 사람이 모름 | BM | 대표 | [Business Model](기획/Monetization.md) | `Confirmed` |
 | DEC_005 | 2026-11-21 | 담당은 사람 이름이 아니라 직무(대표 · 기획자 · PM · 개발자 · 디자이너 · QA · 운영 담당)로 적는다 | 실제 회사 문서는 역할 기준 | "내가 확인" | 대표 | [목차](Proposal.md) | `Confirmed` |
-| DEC_006 | 2026-11-21 | 기획서는 사이트에 공개하지 않는다 — GitHub Actions로 `docs/index.html`만 배포 (GitHub Pages) | 수익 · 법무 위험이 담긴 사내 문서 | 저장소 폴더 통째로 공개 | 대표 | [라이브 운영](LiveOps.md) | `Confirmed` |
+| DEC_006 | 2026-11-21 | 기획서는 사이트에 공개하지 않는다 — GitHub Actions로 `docs/index.html`만 배포 (GitHub Pages) | 수익 · 법무 위험이 담긴 사내 문서 | 저장소 폴더 통째로 공개 | 대표 | [라이브 운영](운영/LiveOps.md) | `Confirmed` |

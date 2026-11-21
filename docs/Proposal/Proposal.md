@@ -1,8 +1,8 @@
 # VR Bowling (BowllyBoll) — 기획서 목차
 
-> 문서 세트: **목차** · 기획: [컨셉](Concept.md) · [시스템](System.md) · [전투·개체](Combat_Entity.md) · [레벨 디자인](LevelDesign.md) · [밸런스](Balance.md) · 사업·운영: [사업 검토](Business.md) · [요구사항·로드맵](Requirements.md) · [Business Model](Monetization.md) · [서버·데이터](Server_Data.md) · [리소스](Resources.md) · [로그·지표](Analytics.md) · [QA·출시](QA_Release.md) · [라이브 운영](LiveOps.md) · [사업화·법무](Business_Legal.md) · [needFix](needFix.md)
+> 문서 세트: **목차** · 기획: [컨셉](기획/Concept.md) · [시스템](기획/System.md) · [전투·개체](기획/Combat_Entity.md) · [레벨 디자인](기획/LevelDesign.md) · [밸런스](기획/Balance.md) · 사업·운영: [사업 검토](대표/Business.md) · [요구사항·로드맵](기획/Requirements.md) · [Business Model](기획/Monetization.md) · [서버·데이터](개발/Server_Data.md) · [리소스](디자인/Resources.md) · [로그·지표](기획/Analytics.md) · [QA·출시](QA/QA_Release.md) · [라이브 운영](운영/LiveOps.md) · [사업화·법무](대표/Business_Legal.md) · [needFix](needFix.md)
 
-> **문서 정보** · 문서 번호 `D00-INDEX` · 버전 v1.1 · 상태 `Review` · 담당 기획자 · 최종 수정 2026-11-21
+> **문서 정보** · 문서 번호 `D00-INDEX` · 버전 v1.2 · 상태 `Review` · 담당 기획자 · 최종 수정 2026-11-21
 
 **변경 이력**
 
@@ -11,6 +11,7 @@
 | v0.9 | 2026-11-20 | 기존 문서 (자세한 기록은 git 커밋) | — | 기획자 | — |
 | v1.0 | 2026-11-21 | 문서 정보 · 변경 이력 · 문서 번호 추가, 사업 · 운영 문서와 연결 | — | 기획자 | 문서만 |
 | v1.1 | 2026-11-21 | 공통 관리 문서(용어집 · 결정 로그) 연결, 단계별 Gate 추가 | 기업용 기획 가이드 흐름 | 기획자 | 문서만 |
+| v1.2 | 2026-11-21 | 문서를 담당 직무별 폴더로 나눔 (링크 경로 갱신) | 담당자가 자기 문서를 찾기 쉽게 | 기획자 | 문서 위치 |
 
 > **분류:** VR 게임 (6DoF 헤드셋, Oculus · Windows MR 설정) · **장르:** 레벨제 아케이드 볼링 + 음악 조명
 > **엔진:** Unity 6 (6000.3.26f1) · C# · XR Interaction Toolkit 3.x · URP
@@ -19,6 +20,7 @@
 ---
 
 ## 문서 구성
+- 폴더는 **담당 직무별**이에요: `대표/` · `기획/` · `디자인/` · `개발/` · `QA/` · `운영/`. 목차 · needFix · 용어집 · 결정 로그는 맨 위에 있어요.
 - 공통 관리: [용어집](Glossary.md)(`D00-TERM`) · [결정 로그](Decisions.md)(`D00-DEC`) · 이 문서 맨 아래 **단계별 Gate**
 - **① 게임 기획** 문서(컨셉 ~ 밸런스)는 **지금 프로젝트에 구현된 내용**(코드 · 씬 · 프리팹 · 데이터)과 그 값으로 계산한 것만 담아요. 단, 컨셉의 **기획 의도**는 기획자가 정한 방향이에요.
 - **② 사업 · 운영** 문서는 출시 · 매출 · 운영을 위한 **계획(초안)**이에요. 상태가 `Draft`인 문서는 아직 정해지지 않은 내용이 있고, 정할 것은 needFix에 모여 있어요.
@@ -37,13 +39,13 @@
 
 | 번호 모양 | 뜻 | 정해진 문서 |
 |---|---|---|
-| `REQ_###` | 요구사항 (할 일) | [Requirements.md](Requirements.md) |
+| `REQ_###` | 요구사항 (할 일) | [Requirements.md](기획/Requirements.md) |
 | `S-##` | 고칠 점 · 제안 (게임 기존 목록) | [needFix.md](needFix.md) |
 | `F-##` | 정할 것 | [needFix.md](needFix.md) |
-| `TC_###` | 테스트 케이스 | [QA_Release.md](QA_Release.md) |
-| `PRD_…` · `PLAN_…` · `AD_…` | 상품 · 요금제 · 광고 자리 | [Monetization.md](Monetization.md) |
-| `evt_…` | 로그 이벤트 | [Analytics.md](Analytics.md) |
-| `MDL_…` · `SFX_…` · `FONT_…` 등 | 리소스 (그림 · 소리 · 폰트) | [Resources.md](Resources.md) |
+| `TC_###` | 테스트 케이스 | [QA_Release.md](QA/QA_Release.md) |
+| `PRD_…` · `PLAN_…` · `AD_…` | 상품 · 요금제 · 광고 자리 | [Monetization.md](기획/Monetization.md) |
+| `evt_…` | 로그 이벤트 | [Analytics.md](기획/Analytics.md) |
+| `MDL_…` · `SFX_…` · `FONT_…` 등 | 리소스 (그림 · 소리 · 폰트) | [Resources.md](디자인/Resources.md) |
 | 상태 | `Draft`(작성 중) → `Review`(검토 중) → `Confirmed`(구현 대상) → `Deprecated`(폐기). **Confirmed만 구현해요** |
 | 변경 이력 | 문서 정보 바로 아래. 무엇이 · 왜 · 어디에 영향이 가는지 |
 | ID | 한 번 정하면 바꾸지 않아요. 코드 · JSON · 로그 · 스토어 상품이 같은 ID를 써요 |
@@ -90,20 +92,20 @@ flowchart LR
 
 | 문서 | 문서 번호 | 단계 | 상태 | 담당 |
 |---|---|---|---|---|
-| [컨셉](Concept.md) | `D01-CONCEPT` | P0 | `Review` | 기획자 |
-| [시스템](System.md) | `D03-SYSTEM` | P1 | `Review` | 기획자 · 클라이언트 개발자 |
-| [전투·개체](Combat_Entity.md) | `D04-ENTITY` | P1 | `Review` | 기획자 · 아티스트 |
-| [레벨 디자인](LevelDesign.md) | `D05-LEVEL` | P2 | `Review` | 레벨 디자이너 |
-| [밸런스](Balance.md) | `D06-BAL` | P1 ~ P4 | `Review` | 밸런스 기획자 |
-| [사업 검토](Business.md) | `D01-BIZ` | P0 | `Draft` | 대표 · 기획자 |
-| [요구사항·로드맵](Requirements.md) | `D02-REQ` | P1 ~ | `Draft` | 기획자 |
-| [Business Model](Monetization.md) | `D07-BM` | P1 | `Draft` | 기획자 · 대표 |
-| [서버·데이터](Server_Data.md) | `D08-SERVER` | P1 | `Draft` | 서버 개발자 |
-| [리소스](Resources.md) | `D09-RES` | P2 | `Draft` | 아티스트 · 사운드 디자이너 |
-| [로그·지표](Analytics.md) | `D10-LOG` | P2 | `Draft` | 기획자 · 클라이언트 개발자 |
-| [QA·출시](QA_Release.md) | `D11-QA` | P2 ~ P3 | `Draft` | QA |
-| [라이브 운영](LiveOps.md) | `D12-LIVE` | P3 ~ P4 | `Draft` | 운영 담당 |
-| [사업화·법무](Business_Legal.md) | `D13-LEGAL` | P0 ~ P3 | `Draft` | 대표 |
+| [컨셉](기획/Concept.md) | `D01-CONCEPT` | P0 | `Review` | 기획자 |
+| [시스템](기획/System.md) | `D03-SYSTEM` | P1 | `Review` | 기획자 · 클라이언트 개발자 |
+| [전투·개체](기획/Combat_Entity.md) | `D04-ENTITY` | P1 | `Review` | 기획자 · 아티스트 |
+| [레벨 디자인](기획/LevelDesign.md) | `D05-LEVEL` | P2 | `Review` | 레벨 디자이너 |
+| [밸런스](기획/Balance.md) | `D06-BAL` | P1 ~ P4 | `Review` | 밸런스 기획자 |
+| [사업 검토](대표/Business.md) | `D01-BIZ` | P0 | `Draft` | 대표 · 기획자 |
+| [요구사항·로드맵](기획/Requirements.md) | `D02-REQ` | P1 ~ | `Draft` | 기획자 |
+| [Business Model](기획/Monetization.md) | `D07-BM` | P1 | `Draft` | 기획자 · 대표 |
+| [서버·데이터](개발/Server_Data.md) | `D08-SERVER` | P1 | `Draft` | 서버 개발자 |
+| [리소스](디자인/Resources.md) | `D09-RES` | P2 | `Draft` | 아티스트 · 사운드 디자이너 |
+| [로그·지표](기획/Analytics.md) | `D10-LOG` | P2 | `Draft` | 기획자 · 클라이언트 개발자 |
+| [QA·출시](QA/QA_Release.md) | `D11-QA` | P2 ~ P3 | `Draft` | QA |
+| [라이브 운영](운영/LiveOps.md) | `D12-LIVE` | P3 ~ P4 | `Draft` | 운영 담당 |
+| [사업화·법무](대표/Business_Legal.md) | `D13-LEGAL` | P0 ~ P3 | `Draft` | 대표 |
 | [needFix](needFix.md) | `D00-FIX` | — | `Review` | 기획자 |
 | [시뮬레이션](../index.html) | — | — | — | 모두 |
 
@@ -190,19 +192,19 @@ flowchart LR
 
 | 단계 | 확인 항목 | 현재 |
 |---|---|---|
-| P0 → P1 사업 검토 통과 | [사업 검토](Business.md) 승인, 예산 · 일정이 자금 범위 안 | ❌ [사업 검토](Business.md) 상태 `Review` |
+| P0 → P1 사업 검토 통과 | [사업 검토](대표/Business.md) 승인, 예산 · 일정이 자금 범위 안 | ❌ [사업 검토](대표/Business.md) 상태 `Review` |
 |  | 수익 모델과 결제 · 유통 경로 방향 결정 | ❌ [F-04](needFix.md) |
-|  | [사업화·법무](Business_Legal.md) 항목 목록 작성 | ✅ 목록 있음 |
-| P1 → P2 설계 확정 | [요구사항](Requirements.md)의 모든 Must에 담당 · 공수 · 완료 기준 | 🔶 완료 기준(Given / When / Then) 있음, 공수 없음 |
+|  | [사업화·법무](대표/Business_Legal.md) 항목 목록 작성 | ✅ 목록 있음 |
+| P1 → P2 설계 확정 | [요구사항](기획/Requirements.md)의 모든 Must에 담당 · 공수 · 완료 기준 | 🔶 완료 기준(Given / When / Then) 있음, 공수 없음 |
 |  | 핵심 기획 문서 상태 `Confirmed` | ❌ `Confirmed` 문서 0개 (모두 `Review` · `Draft`) |
 |  | 요구사항 ↔ 시스템 ↔ 밸런스 ↔ 리소스 ID 연결 | 🔶 ID 부여, 연결 점검은 [needFix](needFix.md) |
 |  | 월 인프라 비용이 예산 안 | 확인 필요 |
-| P2 → P3 MVP 완료 | 모든 Must 구현 | 🔶 [요구사항](Requirements.md)의 "할 일" |
-|  | 라이브 운영(공지 · 이벤트 · 밸런스 수정)을 빌드 없이 처리 | 확인 필요 — [라이브 운영](LiveOps.md) |
+| P2 → P3 MVP 완료 | 모든 Must 구현 | 🔶 [요구사항](기획/Requirements.md)의 "할 일" |
+|  | 라이브 운영(공지 · 이벤트 · 밸런스 수정)을 빌드 없이 처리 | 확인 필요 — [라이브 운영](운영/LiveOps.md) |
 |  | 로그 정상 수집 | ❌ [F-08](needFix.md) |
-|  | 결제 전체 흐름을 테스트 결제로 검증 | ❌ 결제 미도입 · [Business Model](Monetization.md) |
-| P3 → 출시 | 치명 버그 0, 보안 점검 통과 | 확인 필요 — [QA·출시](QA_Release.md) |
+|  | 결제 전체 흐름을 테스트 결제로 검증 | ❌ 결제 미도입 · [Business Model](기획/Monetization.md) |
+| P3 → 출시 | 치명 버그 0, 보안 점검 통과 | 확인 필요 — [QA·출시](QA/QA_Release.md) |
 |  | 이용약관 · 개인정보처리방침 · 사업자 정보 표시 | ❌ 사업자 정보 없음 |
 |  | 스토어 심사 통과 (앱인 경우) | 확인 필요 |
-|  | [사업화·법무](Business_Legal.md) 전 항목 완료 | ❌ |
-|  | 첫 4주 운영 계획 확정 | 🔶 [라이브 운영](LiveOps.md) 초안 |
+|  | [사업화·법무](대표/Business_Legal.md) 전 항목 완료 | ❌ |
+|  | 첫 4주 운영 계획 확정 | 🔶 [라이브 운영](운영/LiveOps.md) 초안 |

@@ -18,10 +18,10 @@
 ## 2. 용어
 | 용어 | 뜻 | 코드 · 데이터 이름 | 관련 문서 |
 |---|---|---|---|
-| 공 | 손으로 잡아 던지는 볼링공 (5종 중 랜덤) | `Ball` | [전투·개체](Combat_Entity.md) §2 |
-| 핀 | 쓰러뜨려 점수를 얻는 대상 | `BowlingPin` | [전투·개체](Combat_Entity.md) |
-| 보관대 (소켓) | 공이 놓이는 칸 — 던지면 0.5초 뒤 같은 칸에 새 공 | `BallSpawner` | [전투·개체](Combat_Entity.md) §2 |
-| 레벨 | 목표 점수를 넘겨야 다음으로 가는 단계 (10레벨) | `LevelManager` | [레벨 디자인](LevelDesign.md) |
-| 목표 점수 · 기회 · 제한 시간 | 레벨을 깨는 조건과 남은 투구 수 · 시간 | `LevelManager` | [시스템](System.md) |
-| ONE MORE | 핀을 1개라도 쓰러뜨리면 기회가 하나 늘어나는 규칙 | — | [시스템](System.md) |
-| 던짐 인정 | 소켓에서 0.2m 밖에서 놓아야 던진 것으로 침 | 프리팹 값 | [전투·개체](Combat_Entity.md) §2 |
+| 공 | 손으로 잡아 던지는 볼링공 (5종 중 랜덤) | `Ball` | [전투·개체](기획/Combat_Entity.md) §2 |
+| 핀 | 쓰러뜨려 점수를 얻는 대상 | `BowlingPin` | [전투·개체](기획/Combat_Entity.md) |
+| 보관대 (소켓) | 공이 놓이는 칸 — 던지면 0.5초 뒤 같은 칸에 새 공 | `BallSpawner` | [전투·개체](기획/Combat_Entity.md) §2 |
+| 레벨 | 목표 점수를 넘겨야 다음으로 가는 단계 (10레벨) | `LevelManager` | [레벨 디자인](기획/LevelDesign.md) |
+| 목표 점수 · 기회 · 제한 시간 | 레벨을 깨는 조건과 남은 투구 수 · 시간 | `LevelManager` | [시스템](기획/System.md) |
+| ONE MORE | 핀을 1개라도 쓰러뜨리면 기회가 하나 늘어나는 규칙 | — | [시스템](기획/System.md) |
+| 던짐 인정 | 소켓에서 0.2m 밖에서 놓아야 던진 것으로 침 | 프리팹 값 | [전투·개체](기획/Combat_Entity.md) §2 |
