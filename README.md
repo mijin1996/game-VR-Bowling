@@ -50,5 +50,5 @@
 ---
 
 ## 📁 문서
-- [`Docs/Proposal/Proposal.md`](Docs/Proposal/Proposal.md) — 기획서 세트(컨셉 · 시스템 · 전투 · 레벨 · 밸런스) · 시뮬레이션
-- [`Docs/00_README.md`](Docs/00_README.md) — 문서 모음 목차 (규칙·설정 가이드·코드 구조)
+- [`docs/Proposal/Proposal.md`](docs/Proposal/Proposal.md) — 기획서 (컨셉 ~ 사업화 · 법무) · [needFix](docs/Proposal/needFix.md)
+- [`docs/00_README.md`](docs/00_README.md) — 문서 모음 목차 (규칙·설정 가이드·코드 구조)
