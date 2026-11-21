@@ -85,7 +85,6 @@ flowchart LR
   classDef ui fill:#5A4A9E,color:#fff,stroke:#5A4A9E
   classDef data fill:#A33A33,color:#fff,stroke:#A33A33
 ```
-> 읽는 법: 왼쪽 목차에서 ① 게임 기획 · ② 사업 · 운영 문서로 이어져요. 두 묶음에서 나온 문제 · 정할 것은 빨강 needFix로 모여요. 보라 = 시뮬레이션이에요.
 
 | 문서 | 문서 번호 | 단계 | 상태 | 담당 |
 |---|---|---|---|---|
