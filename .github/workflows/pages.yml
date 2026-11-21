@@ -1,0 +1,37 @@
+# 시뮬레이션 사이트 배포 (GitHub Pages)
+# docs/index.html 한 장만 사이트에 올린다. docs/Proposal(기획서)은 올리지 않는다.
+# 공개할 파일이 늘면 "사이트에 올릴 파일만 담기"의 cp 줄에 추가한다.
+name: 시뮬레이션 배포
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: 사이트에 올릴 파일만 담기
+        run: |
+          mkdir _site
+          cp docs/index.html _site/
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4
