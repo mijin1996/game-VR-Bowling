@@ -1,14 +1,14 @@
 # 라이브 운영 — VR Bowling (BowllyBoll)
 
-> 문서 세트: [목차](Proposal.md) · 기획: [컨셉](Concept.md) · [시스템](System.md) · [전투·개체](Combat_Entity.md) · [레벨 디자인](LevelDesign.md) · [밸런스](Balance.md) · 사업·운영: [사업 검토](Business.md) · [요구사항·로드맵](Requirements.md) · [BM·경제](Monetization.md) · [서버·데이터](Server_Data.md) · [리소스](Resources.md) · [로그·지표](Analytics.md) · [QA·출시](QA_Release.md) · **라이브 운영** · [사업화·법무](Business_Legal.md) · [needFix](needFix.md)
+> 문서 세트: [목차](Proposal.md) · 기획: [컨셉](Concept.md) · [시스템](System.md) · [전투·개체](Combat_Entity.md) · [레벨 디자인](LevelDesign.md) · [밸런스](Balance.md) · 사업·운영: [사업 검토](Business.md) · [요구사항·로드맵](Requirements.md) · [Business Model](Monetization.md) · [서버·데이터](Server_Data.md) · [리소스](Resources.md) · [로그·지표](Analytics.md) · [QA·출시](QA_Release.md) · **라이브 운영** · [사업화·법무](Business_Legal.md) · [needFix](needFix.md)
 
-> **문서 정보** · ID `D12-LIVE` · v1.0 · 상태 `Draft` · Owner ME (기획 · 개발) · 최종 수정 2026-11-21 · 관련 `D10-LOG`
+> **문서 정보** · 문서 번호 `D12-LIVE` · 버전 v1.0 · 상태 `Draft` · 담당 운영 담당 · 최종 수정 2026-11-21 · 관련 문서 [로그·지표](Analytics.md)
 
 **변경 이력**
 
 | 버전 | 날짜 | 변경 내용 | 사유 | 결정자 | 영향 범위 |
 |---|---|---|---|---|---|
-| v1.0 | 2026-11-21 | 최초 작성 | 사내 문서 기준 v3 적용 | ME | 문서만 |
+| v1.0 | 2026-11-21 | 최초 작성 | — | 운영 담당 | — |
 
 ---
 
@@ -36,7 +36,7 @@
 | 1 | 곡 확보 | [리소스](Resources.md) §3 라이선스 표에 추가 · 원문 저장 |
 | 2 | 조명 박자 데이터 | 박자 확인 |
 | 3 | 레벨 JSON | 목표 · 기회 · 시간 · 기믹 ([밸런스](Balance.md)) |
-| 4 | 테스트 | 실제 헤드셋 TC_006 · TC_010 |
+| 4 | 테스트 | 실제 헤드셋 [TC_006](QA_Release.md) · [TC_010](QA_Release.md) |
 | 5 | 크레딧 | 작곡가 · 모델 작가 표기 |
 
 ## 5. 패치노트 양식
@@ -49,7 +49,7 @@
 ## 6. CS 처리
 | 문의 | 처리 | 기한 |
 |---|---|---|
-| 공이 마음대로 안 가요 | 던지는 법 안내 · 기기 정보 받기 → S-12 검토 | 24시간 |
+| 공이 마음대로 안 가요 | 던지는 법 안내 · 기기 정보 받기 → [S-12](needFix.md) 검토 | 24시간 |
 | 조명이 너무 번쩍여요 | 번쩍임 옵션 안내 | 24시간 |
 | 환불 | 스토어 환불 정책 안내 | 24시간 |
 
