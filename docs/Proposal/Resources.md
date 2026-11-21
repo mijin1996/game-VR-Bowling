@@ -1,14 +1,14 @@
 # 리소스 (아트 · 사운드 · 곡) 명세 — VR Bowling (BowllyBoll)
 
-> 문서 세트: [목차](Proposal.md) · 기획: [컨셉](Concept.md) · [시스템](System.md) · [전투·개체](Combat_Entity.md) · [레벨 디자인](LevelDesign.md) · [밸런스](Balance.md) · 사업·운영: [사업 검토](Business.md) · [요구사항·로드맵](Requirements.md) · [BM·경제](Monetization.md) · [서버·데이터](Server_Data.md) · **리소스** · [로그·지표](Analytics.md) · [QA·출시](QA_Release.md) · [라이브 운영](LiveOps.md) · [사업화·법무](Business_Legal.md) · [needFix](needFix.md)
+> 문서 세트: [목차](Proposal.md) · 기획: [컨셉](Concept.md) · [시스템](System.md) · [전투·개체](Combat_Entity.md) · [레벨 디자인](LevelDesign.md) · [밸런스](Balance.md) · 사업·운영: [사업 검토](Business.md) · [요구사항·로드맵](Requirements.md) · [Business Model](Monetization.md) · [서버·데이터](Server_Data.md) · **리소스** · [로그·지표](Analytics.md) · [QA·출시](QA_Release.md) · [라이브 운영](LiveOps.md) · [사업화·법무](Business_Legal.md) · [needFix](needFix.md)
 
-> **문서 정보** · ID `D09-RES` · v1.0 · 상태 `Draft` · Owner ME (기획 · 개발) · 최종 수정 2026-11-21 · 관련 `D04-ENTITY`, `D13-LEGAL`
+> **문서 정보** · 문서 번호 `D09-RES` · 버전 v1.0 · 상태 `Draft` · 담당 아티스트 · 사운드 디자이너 · 최종 수정 2026-11-21 · 관련 문서 [전투·개체](Combat_Entity.md) · [사업화·법무](Business_Legal.md)
 
 **변경 이력**
 
 | 버전 | 날짜 | 변경 내용 | 사유 | 결정자 | 영향 범위 |
 |---|---|---|---|---|---|
-| v1.0 | 2026-11-21 | 최초 작성 | 사내 문서 기준 v3 적용 | ME | 문서만 |
+| v1.0 | 2026-11-21 | 최초 작성 | — | 아티스트 | — |
 
 ---
 
@@ -23,7 +23,7 @@
 | **맑은 고딕** | `Fonts/MalgunGothic.ttf` · `MalgunGothic SDF.asset` | Microsoft 폰트 — 게임에 넣어 배포하면 안 될 수 있어요. 씬과 `Yorktown SDF`의 대체 폰트(fallback)로 쓰이는 중 | 상업 허용 한글 폰트(OFL 등)로 교체 |
 | `Jupiter.ttf` · `Yorktown.ttf` | `Fonts/` | 라이선스 파일 없음. `Yorktown`은 씬에서 사용 | 출처 · 상업 이용 확인 |
 
-→ [F-03](needFix.md#8-사내-문서-기준-v3-적용-후-정할-것)
+→ [F-03](needFix.md#8-정할-것)
 
 ## 3. 곡 (노래 선택 · 조명 박자)
 | 곡 ID (제안) | 파일 (이름 기준) | 출처 (추정) | 조명 박자 데이터 | 라이선스 |
@@ -56,7 +56,7 @@
 |---|---|---|---|
 | `SONG_REPLACE` | let-it-work 대체곡 | §2 | ⚠️ 대기 |
 | `FONT_KR` | 맑은 고딕 대체 한글 폰트 | §2 | ⚠️ 대기 |
-| `UI_RESULT_STARS` | 별 1 ~ 3개 결과 화면 · 실패 이유 | REQ_110 | 대기 |
+| `UI_RESULT_STARS` | 별 1 ~ 3개 결과 화면 · 실패 이유 | [REQ_110](Requirements.md) | 대기 |
 | `UI_SAFETY` | 시작 안전 안내 (주변 공간) | [QA](QA_Release.md) §4 | 대기 |
-| `UI_CREDITS` | 크레딧 (Sketchfab 작가 · 곡 · 폰트) | REQ_113 | 대기 |
+| `UI_CREDITS` | 크레딧 (Sketchfab 작가 · 곡 · 폰트) | [REQ_113](Requirements.md) | 대기 |
 | `STORE_*` | VR 스토어 이미지 · 트레일러 | [QA](QA_Release.md) §5 | 대기 |
