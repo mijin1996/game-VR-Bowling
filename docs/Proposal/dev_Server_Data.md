@@ -1,8 +1,8 @@
 # 서버 · 데이터 연동 — VR Bowling (BowllyBoll)
 
-> 문서 세트: [목차](../Index.md) · 기획: [컨셉](../기획/Concept.md) · [시스템](../기획/System.md) · [전투·개체](../기획/Combat_Entity.md) · [레벨 디자인](../기획/LevelDesign.md) · [밸런스](../기획/Balance.md) · 사업·운영: [사업 검토](../대표/Business.md) · [요구사항·로드맵](../기획/Requirements.md) · [Business Model](../기획/Monetization.md) · **서버·데이터** · [리소스](../디자인/Resources.md) · [로그·지표](../기획/Analytics.md) · [QA·출시](../QA/QA_Release.md) · [라이브 운영](../운영/LiveOps.md) · [사업화·법무](../대표/Business_Legal.md) · [needFix](../needFix.md)
+> 문서 세트: [목차](common_Index.md) · 기획: [컨셉](planning_Concept.md) · [시스템](planning_System.md) · [전투·개체](planning_Combat_Entity.md) · [레벨 디자인](planning_LevelDesign.md) · [밸런스](planning_Balance.md) · 사업·운영: [사업 검토](owner_Business.md) · [요구사항·로드맵](planning_Requirements.md) · [Business Model](planning_Monetization.md) · **서버·데이터** · [리소스](design_Resources.md) · [로그·지표](planning_Analytics.md) · [QA·출시](qa_QA_Release.md) · [라이브 운영](ops_LiveOps.md) · [사업화·법무](owner_Business_Legal.md) · [needFix](common_needFix.md)
 
-> **문서 정보** · 문서 번호 `D08-SERVER` · 버전 v1.0 · 상태 `Draft` · 담당 서버 개발자 · 최종 수정 2026-11-21 · 관련 문서 [시스템](../기획/System.md) · [Business Model](../기획/Monetization.md)
+> **문서 정보** · 문서 번호 `D08-SERVER` · 버전 v1.0 · 상태 `Draft` · 담당 서버 개발자 · 최종 수정 2026-11-21 · 관련 문서 [시스템](planning_System.md) · [Business Model](planning_Monetization.md)
 
 **변경 이력**
 
@@ -43,5 +43,5 @@
 ## 4. 레벨 데이터
 | 항목 | 내용 |
 |---|---|
-| 지금 | 목표 점수 · 기회 · 시간은 [밸런스](../기획/Balance.md) `Balance/level_goal.json` · `rule_params.json`에 정리, 코드 · 씬 값과 같은지 확인 |
-| 레벨 팩 | 레벨을 JSON으로 추가하는 구조를 만들면 업데이트 · DLC가 쉬워져요 → [F-05](../needFix.md#8-정할-것) |
+| 지금 | 목표 점수 · 기회 · 시간은 [밸런스](planning_Balance.md) `Balance/level_goal.json` · `rule_params.json`에 정리, 코드 · 씬 값과 같은지 확인 |
+| 레벨 팩 | 레벨을 JSON으로 추가하는 구조를 만들면 업데이트 · DLC가 쉬워져요 → [F-05](common_needFix.md#8-정할-것) |

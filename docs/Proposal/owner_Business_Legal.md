@@ -1,8 +1,8 @@
 # 사업화 · 법무 체크리스트 — VR Bowling (BowllyBoll)
 
-> 문서 세트: [목차](../Index.md) · 기획: [컨셉](../기획/Concept.md) · [시스템](../기획/System.md) · [전투·개체](../기획/Combat_Entity.md) · [레벨 디자인](../기획/LevelDesign.md) · [밸런스](../기획/Balance.md) · 사업·운영: [사업 검토](Business.md) · [요구사항·로드맵](../기획/Requirements.md) · [Business Model](../기획/Monetization.md) · [서버·데이터](../개발/Server_Data.md) · [리소스](../디자인/Resources.md) · [로그·지표](../기획/Analytics.md) · [QA·출시](../QA/QA_Release.md) · [라이브 운영](../운영/LiveOps.md) · **사업화·법무** · [needFix](../needFix.md)
+> 문서 세트: [목차](common_Index.md) · 기획: [컨셉](planning_Concept.md) · [시스템](planning_System.md) · [전투·개체](planning_Combat_Entity.md) · [레벨 디자인](planning_LevelDesign.md) · [밸런스](planning_Balance.md) · 사업·운영: [사업 검토](owner_Business.md) · [요구사항·로드맵](planning_Requirements.md) · [Business Model](planning_Monetization.md) · [서버·데이터](dev_Server_Data.md) · [리소스](design_Resources.md) · [로그·지표](planning_Analytics.md) · [QA·출시](qa_QA_Release.md) · [라이브 운영](ops_LiveOps.md) · **사업화·법무** · [needFix](common_needFix.md)
 
-> **문서 정보** · 문서 번호 `D13-LEGAL` · 버전 v1.0 · 상태 `Draft` · 담당 대표 · 최종 수정 2026-11-21 · 관련 문서 [리소스](../디자인/Resources.md) · [QA·출시](../QA/QA_Release.md)
+> **문서 정보** · 문서 번호 `D13-LEGAL` · 버전 v1.0 · 상태 `Draft` · 담당 대표 · 최종 수정 2026-11-21 · 관련 문서 [리소스](design_Resources.md) · [QA·출시](qa_QA_Release.md)
 
 **변경 이력**
 
@@ -24,7 +24,7 @@
 | | 통신판매업 신고 | 유료 앱 판매 시 필요 여부 확인 | 대기 | |
 | | 게임 관련 업 등록 | 게임산업법상 게임제작업 · 배급업 등록 대상인지 확인 | 대기 | |
 | 스토어 | VR 스토어 개발자 계정 | 조직(사업자) 계정 · 판매자 정보 · 정산 · 세금 | 대기 | |
-| | 수수료 · 심사 기준 | 수수료율 ([Business Model](../기획/Monetization.md) §4 가정 30%) · 기술 기준 | 대기 | |
+| | 수수료 · 심사 기준 | 수수료율 ([Business Model](planning_Monetization.md) §4 가정 30%) · 기술 기준 | 대기 | |
 | 게임 규제 | 등급분류 | 해당 스토어 등급 절차 | 대기 | |
 | | 확률 정보 공개 | 없음 | 해당 없음 | |
 | 개인정보 | 개인정보처리방침 | 분석 도구를 쓰면 필요, 추적 데이터 비수집 명시 | 대기 | |
@@ -38,6 +38,6 @@
 | 서비스 종료 | 종료 절차 | 레벨 팩 구매자 안내 | 대기 | |
 
 ## 3. 이 게임에서 먼저 볼 것
-1. **저작권 곡이 실제로 쓰이는 중** — 작업자가 스스로 "사용x"라고 표시한 파일이 씬에 연결돼 있어요. 다른 작업보다 먼저 빼요 → [F-03](../needFix.md#8-정할-것)
+1. **저작권 곡이 실제로 쓰이는 중** — 작업자가 스스로 "사용x"라고 표시한 파일이 씬에 연결돼 있어요. 다른 작업보다 먼저 빼요 → [F-03](common_needFix.md#8-정할-것)
 2. **맑은 고딕** — 개발 PC에 있는 시스템 폰트를 그대로 넣은 경우가 많아요. 상업 허용 한글 폰트로 바꿔요.
 3. **Sketchfab** — 다운로드한 페이지에서 라이선스를 다시 확인하고 크레딧 화면에 작가 이름을 넣어요.

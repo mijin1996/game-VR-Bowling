@@ -1,9 +1,9 @@
 # 시스템 — 레벨 · 투구 판정 · 공 · 핀 · 랭킹
 
-> 문서 세트: [목차](../Index.md) · 기획: [컨셉](Concept.md) · **시스템** · [전투·개체](Combat_Entity.md) · [레벨 디자인](LevelDesign.md) · [밸런스](Balance.md) · 사업·운영: [사업 검토](../대표/Business.md) · [요구사항·로드맵](Requirements.md) · [Business Model](Monetization.md) · [서버·데이터](../개발/Server_Data.md) · [리소스](../디자인/Resources.md) · [로그·지표](Analytics.md) · [QA·출시](../QA/QA_Release.md) · [라이브 운영](../운영/LiveOps.md) · [사업화·법무](../대표/Business_Legal.md) · [needFix](../needFix.md)
+> 문서 세트: [목차](common_Index.md) · 기획: [컨셉](planning_Concept.md) · **시스템** · [전투·개체](planning_Combat_Entity.md) · [레벨 디자인](planning_LevelDesign.md) · [밸런스](planning_Balance.md) · 사업·운영: [사업 검토](owner_Business.md) · [요구사항·로드맵](planning_Requirements.md) · [Business Model](planning_Monetization.md) · [서버·데이터](dev_Server_Data.md) · [리소스](design_Resources.md) · [로그·지표](planning_Analytics.md) · [QA·출시](qa_QA_Release.md) · [라이브 운영](ops_LiveOps.md) · [사업화·법무](owner_Business_Legal.md) · [needFix](common_needFix.md)
 > 관련 코드: `LevelManager.cs` · `GameManager.cs` · `ButtonManager.cs` · `Ball.cs` · `BallSpawner.cs` · `Pin.cs` · `PinSpawner.cs` · `Ranking.cs` · `SoundManager.cs`
 
-> **문서 정보** · 문서 번호 `D03-SYSTEM` · 버전 v1.0 · 상태 `Review` · 담당 기획자 · 클라이언트 개발자 · 최종 수정 2026-11-21 · 관련 문서 [전투·개체](Combat_Entity.md) · [Business Model](Monetization.md)
+> **문서 정보** · 문서 번호 `D03-SYSTEM` · 버전 v1.0 · 상태 `Review` · 담당 기획자 · 클라이언트 개발자 · 최종 수정 2026-11-21 · 관련 문서 [전투·개체](planning_Combat_Entity.md) · [Business Model](planning_Monetization.md)
 
 **변경 이력**
 
@@ -474,15 +474,15 @@ gantt
 | 4 | 시작하자마자 핀이 물리로 흔들려 쓰러짐 | 공이 올 때까지 고정 | ✅ |
 | 5 | 쓰러짐 조건 두 개를 동시에 만족 | `isFallen`으로 1번만 점수 | ✅ |
 | 6 | 판정 중에 또 던진 공 | 대기 투구로 쌓아 이어서 판정 | ✅ |
-| 7 | 판정 중 연속 투구 | 0.5초마다 새 공 → 여러 공의 핀이 판정 1번에 합쳐짐 | ⚠️ → [S-01](../needFix.md) |
+| 7 | 판정 중 연속 투구 | 0.5초마다 새 공 → 여러 공의 핀이 판정 1번에 합쳐짐 | ⚠️ → [S-01](common_needFix.md) |
 | 8 | 판정 중 목표 도달 | 즉시 판정 | ✅ |
-| 9 | 30초 안에 못 던짐 | 남은 기회와 상관없이 MISS → 실패 판넬 | ⚠️ → [S-02](../needFix.md) |
+| 9 | 30초 안에 못 던짐 | 남은 기회와 상관없이 MISS → 실패 판넬 | ⚠️ → [S-02](common_needFix.md) |
 | 10 | 실패 후 NEXT | 넘어가지 않고 "Current score not reached" 2초 | ✅ |
 | 11 | 숨긴 상태에서 공이 다시 나타남 | 숨길 때 재생성 예약 취소 | ✅ |
 | 12 | 일시정지 상태에서 RESTART · QUIT | timeScale 1로 되돌린 뒤 처리 | ✅ |
 | 13 | 0점 판 | 랭킹에 저장 안 함 | ✅ |
 | 14 | 사라진 매니저의 이벤트 | `OnDestroy`에서 구독 해제 | ✅ |
-| 15 | 헤드셋을 벗음 | 처리 없음 → 타이머 계속 | → [S-03](../needFix.md) |
+| 15 | 헤드셋을 벗음 | 처리 없음 → 타이머 계속 | → [S-03](common_needFix.md) |
 | 16 | 레인 3개 중 아무 데나 침 | 판정은 같고, 판정 후 3세트 모두 다시 세움 | ✅ |
 
 ---

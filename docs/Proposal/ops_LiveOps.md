@@ -1,8 +1,8 @@
 # 라이브 운영 — VR Bowling (BowllyBoll)
 
-> 문서 세트: [목차](../Index.md) · 기획: [컨셉](../기획/Concept.md) · [시스템](../기획/System.md) · [전투·개체](../기획/Combat_Entity.md) · [레벨 디자인](../기획/LevelDesign.md) · [밸런스](../기획/Balance.md) · 사업·운영: [사업 검토](../대표/Business.md) · [요구사항·로드맵](../기획/Requirements.md) · [Business Model](../기획/Monetization.md) · [서버·데이터](../개발/Server_Data.md) · [리소스](../디자인/Resources.md) · [로그·지표](../기획/Analytics.md) · [QA·출시](../QA/QA_Release.md) · **라이브 운영** · [사업화·법무](../대표/Business_Legal.md) · [needFix](../needFix.md)
+> 문서 세트: [목차](common_Index.md) · 기획: [컨셉](planning_Concept.md) · [시스템](planning_System.md) · [전투·개체](planning_Combat_Entity.md) · [레벨 디자인](planning_LevelDesign.md) · [밸런스](planning_Balance.md) · 사업·운영: [사업 검토](owner_Business.md) · [요구사항·로드맵](planning_Requirements.md) · [Business Model](planning_Monetization.md) · [서버·데이터](dev_Server_Data.md) · [리소스](design_Resources.md) · [로그·지표](planning_Analytics.md) · [QA·출시](qa_QA_Release.md) · **라이브 운영** · [사업화·법무](owner_Business_Legal.md) · [needFix](common_needFix.md)
 
-> **문서 정보** · 문서 번호 `D12-LIVE` · 버전 v1.0 · 상태 `Draft` · 담당 운영 담당 · 최종 수정 2026-11-21 · 관련 문서 [로그·지표](../기획/Analytics.md)
+> **문서 정보** · 문서 번호 `D12-LIVE` · 버전 v1.0 · 상태 `Draft` · 담당 운영 담당 · 최종 수정 2026-11-21 · 관련 문서 [로그·지표](planning_Analytics.md)
 
 **변경 이력**
 
@@ -33,10 +33,10 @@
 ## 4. 레벨 · 곡 추가 절차
 | 단계 | 할 일 | 확인 |
 |---|---|---|
-| 1 | 곡 확보 | [리소스](../디자인/Resources.md) §3 라이선스 표에 추가 · 원문 저장 |
+| 1 | 곡 확보 | [리소스](design_Resources.md) §3 라이선스 표에 추가 · 원문 저장 |
 | 2 | 조명 박자 데이터 | 박자 확인 |
-| 3 | 레벨 JSON | 목표 · 기회 · 시간 · 기믹 ([밸런스](../기획/Balance.md)) |
-| 4 | 테스트 | 실제 헤드셋 [TC_006](../QA/QA_Release.md) · [TC_010](../QA/QA_Release.md) |
+| 3 | 레벨 JSON | 목표 · 기회 · 시간 · 기믹 ([밸런스](planning_Balance.md)) |
+| 4 | 테스트 | 실제 헤드셋 [TC_006](qa_QA_Release.md) · [TC_010](qa_QA_Release.md) |
 | 5 | 크레딧 | 작곡가 · 모델 작가 표기 |
 
 ## 5. 패치노트 양식
@@ -49,7 +49,7 @@
 ## 6. CS 처리
 | 문의 | 처리 | 기한 |
 |---|---|---|
-| 공이 마음대로 안 가요 | 던지는 법 안내 · 기기 정보 받기 → [S-12](../needFix.md) 검토 | 24시간 |
+| 공이 마음대로 안 가요 | 던지는 법 안내 · 기기 정보 받기 → [S-12](common_needFix.md) 검토 | 24시간 |
 | 조명이 너무 번쩍여요 | 번쩍임 옵션 안내 | 24시간 |
 | 환불 | 스토어 환불 정책 안내 | 24시간 |
 
