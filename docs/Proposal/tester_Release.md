@@ -1,19 +1,22 @@
 # QA · 출시 체크리스트 — VR Bowling (BowllyBoll)
 
-> 문서 세트: [목차](common_Index.md) · 기획: [컨셉](planning_Concept.md) · [시스템](planning_System.md) · [전투·개체](planning_Combat_Entity.md) · [레벨 디자인](planning_LevelDesign.md) · [밸런스](planning_Balance.md) · 사업·운영: [사업 검토](owner_Business.md) · [요구사항·로드맵](planning_Requirements.md) · [Business Model](planning_Monetization.md) · [서버·데이터](dev_Server_Data.md) · [리소스](design_Resources.md) · [로그·지표](planning_Analytics.md) · **QA·출시** · [라이브 운영](ops_LiveOps.md) · [사업화·법무](owner_Business_Legal.md) · [needFix](common_needFix.md)
+> 문서 세트: [목차](common_Index.md) · 기획: [컨셉](planner_Concept.md) · [시스템](planner_System.md) · [전투·개체](planner_Combat_Entity.md) · [레벨 디자인](designer_LevelDesign.md) · [밸런스](planner_Balance.md) · 사업·운영: [사업 검토](owner_Business.md) · [요구사항·로드맵](planner_Requirements.md) · [Business Model](planner_Monetization.md) · [서버·데이터](developer_Server_Data.md) · [리소스](designer_Resources.md) · [로그·지표](planner_Analytics.md) · **QA·출시** · [라이브 운영](operator_LiveOps.md) · [사업화·법무](owner_Legal.md) · [needFix](common_needFix.md)
 
-> **문서 정보** · 문서 번호 `D11-QA` · 버전 v1.0 · 상태 `Draft` · 담당 QA · 최종 수정 2026-11-21 · 관련 문서 [시스템](planning_System.md) · [사업화·법무](owner_Business_Legal.md)
+> **문서 정보**
+
+| 문서 번호 | 버전 | 상태 | 책임자 | 협업 | 최종 수정 | 관련 문서 |
+|---|---|---|---|---|---|---|
+| `D11-QA` | v1.1 | `Draft` | QA 테스터 | 클라이언트 개발자 | 2026-11-23 | [시스템](planner_System.md) · [사업화·법무](owner_Legal.md) |
 
 **변경 이력**
 
 | 버전 | 날짜 | 변경 내용 | 사유 | 결정자 | 영향 범위 |
 |---|---|---|---|---|---|
-| v1.0 | 2026-11-21 | 최초 작성 | — | QA | — |
 
 ---
 
 ## 1. 목적
-**출시해도 되는 상태인지** 판정하는 문서예요. VR은 **편의 · 안전 · 성능**이 스토어 심사와 리뷰를 좌우해요.
+**출시해도 되는 상태인지** 판정하는 문서임. VR은 **편의 · 안전 · 성능**이 스토어 심사와 리뷰를 좌우함.
 
 ## 2. 버그 등급
 | 등급 | 기준 | 출시 조건 |
@@ -25,14 +28,14 @@
 ## 3. 테스트 케이스
 | TC ID | 확인 방법 | 기대 결과 | 관련 | 등급 |
 |---|---|---|---|---|
-| `TC_001` | 출시 빌드 곡 목록 · 배경음 · 폰트 확인 | let-it-work · 맑은 고딕 없음 | [REQ_100](planning_Requirements.md) | 치명 |
+| `TC_001` | 출시 빌드 곡 목록 · 배경음 · 폰트 확인 | let-it-work · 맑은 고딕 없음 | [REQ_100](planner_Requirements.md) | 치명 |
 | `TC_002` | 공이 굴러가는 중 두 번째 공 던지기 | 정한 규칙대로 판정 (섞이지 않음) | [S-01](common_needFix.md) | 높음 |
 | `TC_003` | 기회 2 남기고 30초 넘기기 | 기회 1로 계속 | [S-02](common_needFix.md) | 높음 |
 | `TC_004` | 플레이 중 헤드셋 벗기 | 타이머 멈춤 | [S-03](common_needFix.md) | 높음 |
 | `TC_005` | 레인 3개 모두 사용 | 카운트다운 · 핀 · 보관대가 3개로 일치 | [S-11](common_needFix.md) | 보통 |
 | `TC_006` | 천천히 · 빠르게 · 옆으로 휘둘러 던지기 | 힘 · 방향이 팔 움직임대로 | [S-12](common_needFix.md) | 높음 |
 | `TC_007` | 스트라이크 · 스페어 | 보너스 점수 · 연출 | [S-05](common_needFix.md) | 보통 |
-| `TC_008` | 레벨 3 클리어 → 앱 재시작 | 별 · 기록 유지 | [REQ_110](planning_Requirements.md) | 높음 |
+| `TC_008` | 레벨 3 클리어 → 앱 재시작 | 별 · 기록 유지 | [REQ_110](planner_Requirements.md) | 높음 |
 | `TC_009` | 공을 몸 뒤 · 천장으로 던지기 | 공이 사라지면 보관대에 다시 나옴 | — | 보통 |
 | `TC_010` | 30분 연속 플레이 | 프레임 · 발열 · 메모리 이상 없음 | — | 치명 |
 
@@ -55,10 +58,10 @@
 | 스토어 기술 기준을 TC로 옮기기 | 대기 |
 | 연령 등급 · 편의 등급 | 대기 |
 | 트레일러 · 스크린샷 · 아이콘 | 대기 |
-| 크레딧 · 라이선스 화면 (Sketchfab CC 표기) | 대기 ([REQ_113](planning_Requirements.md)) |
+| 크레딧 · 라이선스 화면 (Sketchfab CC 표기) | 대기 ([REQ_113](planner_Requirements.md)) |
 
 ## 6. 출시 판정
 - [ ] 치명 버그 0 (TC_001 포함)
 - [ ] VR 편의 · 안전 기준 전부 통과
-- [ ] [리소스](design_Resources.md) 라이선스 전부 확인
-- [ ] [사업화 · 법무](owner_Business_Legal.md) 전 항목 완료
+- [ ] [리소스](designer_Resources.md) 라이선스 전부 확인
+- [ ] [사업화 · 법무](owner_Legal.md) 전 항목 완료

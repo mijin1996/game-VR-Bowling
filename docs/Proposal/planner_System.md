@@ -1,16 +1,18 @@
 # 시스템 — 레벨 · 투구 판정 · 공 · 핀 · 랭킹
 
-> 문서 세트: [목차](common_Index.md) · 기획: [컨셉](planning_Concept.md) · **시스템** · [전투·개체](planning_Combat_Entity.md) · [레벨 디자인](planning_LevelDesign.md) · [밸런스](planning_Balance.md) · 사업·운영: [사업 검토](owner_Business.md) · [요구사항·로드맵](planning_Requirements.md) · [Business Model](planning_Monetization.md) · [서버·데이터](dev_Server_Data.md) · [리소스](design_Resources.md) · [로그·지표](planning_Analytics.md) · [QA·출시](qa_QA_Release.md) · [라이브 운영](ops_LiveOps.md) · [사업화·법무](owner_Business_Legal.md) · [needFix](common_needFix.md)
+> 문서 세트: [목차](common_Index.md) · 기획: [컨셉](planner_Concept.md) · **시스템** · [전투·개체](planner_Combat_Entity.md) · [레벨 디자인](designer_LevelDesign.md) · [밸런스](planner_Balance.md) · 사업·운영: [사업 검토](owner_Business.md) · [요구사항·로드맵](planner_Requirements.md) · [Business Model](planner_Monetization.md) · [서버·데이터](developer_Server_Data.md) · [리소스](designer_Resources.md) · [로그·지표](planner_Analytics.md) · [QA·출시](tester_Release.md) · [라이브 운영](operator_LiveOps.md) · [사업화·법무](owner_Legal.md) · [needFix](common_needFix.md)
 > 관련 코드: `LevelManager.cs` · `GameManager.cs` · `ButtonManager.cs` · `Ball.cs` · `BallSpawner.cs` · `Pin.cs` · `PinSpawner.cs` · `Ranking.cs` · `SoundManager.cs`
 
-> **문서 정보** · 문서 번호 `D03-SYSTEM` · 버전 v1.0 · 상태 `Review` · 담당 기획자 · 클라이언트 개발자 · 최종 수정 2026-11-21 · 관련 문서 [전투·개체](planning_Combat_Entity.md) · [Business Model](planning_Monetization.md)
+> **문서 정보**
+
+| 문서 번호 | 버전 | 상태 | 책임자 | 협업 | 최종 수정 | 관련 문서 |
+|---|---|---|---|---|---|---|
+| `D03-SYSTEM` | v1.1 | `Review` | 기획자 | 클라이언트 개발자 | 2026-11-23 | [전투·개체](planner_Combat_Entity.md) · [Business Model](planner_Monetization.md) |
 
 **변경 이력**
 
 | 버전 | 날짜 | 변경 내용 | 사유 | 결정자 | 영향 범위 |
 |---|---|---|---|---|---|
-| v0.9 | 2026-11-20 | 기존 문서 (자세한 기록은 git 커밋) | — | 기획자 | — |
-| v1.0 | 2026-11-21 | 문서 정보 · 변경 이력 · 문서 번호 추가, 사업 · 운영 문서와 연결 | — | 기획자 | 문서만 |
 
 ---
 
@@ -62,7 +64,7 @@ flowchart LR
 ```
 
 ## 1. 화면 흐름
-씬은 `BowlingGame` 하나. 로비 · 플레이 · 판넬을 켜고 끄는 방식으로 전환해요 (씬을 다시 불러오지 않아 음악 · 조명이 이어짐).
+씬은 `BowlingGame` 하나. 로비 · 플레이 · 판넬을 켜고 끄는 방식으로 전환함 (씬을 다시 불러오지 않아 음악 · 조명이 이어짐).
 
 **[상태도] 화면 전환 (씬 하나 안에서 판넬을 켜고 끔)**
 ```mermaid
@@ -166,7 +168,7 @@ flowchart TD
   classDef endc fill:#6B7280,color:#fff,stroke:#6B7280
 ```
 
-> 세부 조건(코드 기준)은 [부록 A-1](#a-1-레벨-시작-startlevel)에 있어요.
+> 세부 조건(코드 기준)은 [부록 A-1](#a-1-레벨-시작-startlevel)에 있음.
 
 ### 3-2. 투구 판정 `JudgeThrow()`
 
@@ -237,7 +239,7 @@ case C: 굴러가는 중에 점수가 목표에 닿음
   throw --- pins falling --- score >= goal ---> JUDGE now -> NICE JOB
 ```
 
-> 세부 조건(코드 기준)은 [부록 A-2](#a-2-투구-판정-judgethrow)에 있어요.
+> 세부 조건(코드 기준)은 [부록 A-2](#a-2-투구-판정-judgethrow)에 있음.
 
 ### 3-3. 공 (`Ball` · `BallSpawner`)
 
@@ -290,7 +292,7 @@ flowchart TD
    놓은 뒤 30초  OR  소켓에서 30m 이상  OR  높이 -10 아래
 ```
 
-> 세부 조건(코드 기준)은 [부록 A-3](#a-3-공-ball--ballspawner)에 있어요.
+> 세부 조건(코드 기준)은 [부록 A-3](#a-3-공-ball--ballspawner)에 있음.
 
 ### 3-4. 핀 (`Pin`)
 
@@ -353,7 +355,7 @@ before ball           ball comes (> 0.2 m/s)
 (a) 서 있음 · (b) 45도 이상 기움 = 쓰러짐 · (c) 바닥(Floor)에 닿음 = 쓰러짐
 ```
 
-> 세부 조건(코드 기준)은 [부록 A-4](#a-4-핀-pin)에 있어요.
+> 세부 조건(코드 기준)은 [부록 A-4](#a-4-핀-pin)에 있음.
 
 ### 3-5. 랭킹 (`Ranking`)
 
@@ -381,7 +383,7 @@ flowchart TD
   classDef endc fill:#6B7280,color:#fff,stroke:#6B7280
 ```
 
-> 세부 조건(코드 기준)은 [부록 A-5](#a-5-랭킹-ranking)에 있어요.
+> 세부 조건(코드 기준)은 [부록 A-5](#a-5-랭킹-ranking)에 있음.
 
 ### 3-6. 일시정지
 
@@ -409,7 +411,7 @@ flowchart TD
   classDef endc fill:#6B7280,color:#fff,stroke:#6B7280
 ```
 
-> 세부 조건(코드 기준)은 [부록 A-6](#a-6-일시정지)에 있어요.
+> 세부 조건(코드 기준)은 [부록 A-6](#a-6-일시정지)에 있음.
 
 ## 4. 예외 처리 (Edge Case) — 현재 동작
 **[구성도] 예외 처리 지도**
@@ -488,7 +490,7 @@ gantt
 ---
 
 ## 부록 A. 세부 조건 (코드 기준)
-본문 흐름도의 조건을 코드 그대로 적은 개발 참고용이에요. 기획 내용은 본문에 있어요.
+본문 흐름도의 조건을 코드 그대로 적은 개발 참고용임. 기획 내용은 본문에 있음.
 
 ### A-1. 레벨 시작 `StartLevel()`
 ```

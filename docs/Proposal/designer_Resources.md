@@ -1,26 +1,29 @@
 # 리소스 (아트 · 사운드 · 곡) 명세 — VR Bowling (BowllyBoll)
 
-> 문서 세트: [목차](common_Index.md) · 기획: [컨셉](planning_Concept.md) · [시스템](planning_System.md) · [전투·개체](planning_Combat_Entity.md) · [레벨 디자인](planning_LevelDesign.md) · [밸런스](planning_Balance.md) · 사업·운영: [사업 검토](owner_Business.md) · [요구사항·로드맵](planning_Requirements.md) · [Business Model](planning_Monetization.md) · [서버·데이터](dev_Server_Data.md) · **리소스** · [로그·지표](planning_Analytics.md) · [QA·출시](qa_QA_Release.md) · [라이브 운영](ops_LiveOps.md) · [사업화·법무](owner_Business_Legal.md) · [needFix](common_needFix.md)
+> 문서 세트: [목차](common_Index.md) · 기획: [컨셉](planner_Concept.md) · [시스템](planner_System.md) · [전투·개체](planner_Combat_Entity.md) · [레벨 디자인](designer_LevelDesign.md) · [밸런스](planner_Balance.md) · 사업·운영: [사업 검토](owner_Business.md) · [요구사항·로드맵](planner_Requirements.md) · [Business Model](planner_Monetization.md) · [서버·데이터](developer_Server_Data.md) · **리소스** · [로그·지표](planner_Analytics.md) · [QA·출시](tester_Release.md) · [라이브 운영](operator_LiveOps.md) · [사업화·법무](owner_Legal.md) · [needFix](common_needFix.md)
 
-> **문서 정보** · 문서 번호 `D09-RES` · 버전 v1.0 · 상태 `Draft` · 담당 아티스트 · 사운드 디자이너 · 최종 수정 2026-11-21 · 관련 문서 [전투·개체](planning_Combat_Entity.md) · [사업화·법무](owner_Business_Legal.md)
+> **문서 정보**
+
+| 문서 번호 | 버전 | 상태 | 책임자 | 협업 | 최종 수정 | 관련 문서 |
+|---|---|---|---|---|---|---|
+| `D09-RES` | v1.1 | `Draft` | 아트 디자이너 | 사운드 디자이너 | 2026-11-23 | [전투·개체](planner_Combat_Entity.md) · [사업화·법무](owner_Legal.md) |
 
 **변경 이력**
 
 | 버전 | 날짜 | 변경 내용 | 사유 | 결정자 | 영향 범위 |
 |---|---|---|---|---|---|
-| v1.0 | 2026-11-21 | 최초 작성 | — | 아티스트 | — |
 
 ---
 
 ## 1. 목적
-게임에 들어가는 **모든 곡 · 모델 · 소리 · 폰트의 목록 · 라이선스**를 관리해요.
-> **규칙:** 라이선스가 `확인됨`이 아닌 리소스가 있으면 출시하지 않아요.
+게임에 들어가는 **모든 곡 · 모델 · 소리 · 폰트의 목록 · 라이선스**를 관리함.
+> **규칙:** 라이선스가 `확인됨`이 아닌 리소스가 있으면 출시하지 않음.
 
 ## 2. ⚠️ 먼저 고칠 것 — 출시 차단
 | 리소스 | 위치 | 문제 (2026-11-21 확인) | 대응 |
 |---|---|---|---|
-| **let-it-work** | `Music/1 let-it-work(저작권있음 사용x).mp3` · `Music/Beat Sage_ let-it-work.mp3 - 6/song.ogg` | 파일 이름에 "저작권있음 사용x"라고 적혀 있는데, **`씬/BowlingGame.unity`의 곡 목록(`song`)과 배경음(`bgmClip`) · 오디오 소스에서 쓰이고 있어요** | 씬에서 대체곡으로 바꾸고 두 파일 모두 프로젝트에서 빼기 |
-| **맑은 고딕** | `Fonts/MalgunGothic.ttf` · `MalgunGothic SDF.asset` | Microsoft 폰트 — 게임에 넣어 배포하면 안 될 수 있어요. 씬과 `Yorktown SDF`의 대체 폰트(fallback)로 쓰이는 중 | 상업 허용 한글 폰트(OFL 등)로 교체 |
+| **let-it-work** | `Music/1 let-it-work(저작권있음 사용x).mp3` · `Music/Beat Sage_ let-it-work.mp3 - 6/song.ogg` | 파일 이름에 "저작권있음 사용x"라고 적혀 있는데, **`씬/BowlingGame.unity`의 곡 목록(`song`)과 배경음(`bgmClip`) · 오디오 소스에서 쓰이고 있음** | 씬에서 대체곡으로 바꾸고 두 파일 모두 프로젝트에서 빼기 |
+| **맑은 고딕** | `Fonts/MalgunGothic.ttf` · `MalgunGothic SDF.asset` | Microsoft 폰트 — 게임에 넣어 배포하면 안 될 수 있음. 씬과 `Yorktown SDF`의 대체 폰트(fallback)로 쓰이는 중 | 상업 허용 한글 폰트(OFL 등)로 교체 |
 | `Jupiter.ttf` · `Yorktown.ttf` | `Fonts/` | 라이선스 파일 없음. `Yorktown`은 씬에서 사용 | 출처 · 상업 이용 확인 |
 
 → [F-03](common_needFix.md#8-정할-것)
@@ -37,7 +40,7 @@
 | ~~`SONG_006`~~ | ~~`let-it-work`~~ | 저작권 있음 | — | ❌ 사용 금지 (§2) |
 | `BGM_COMBAT_*` | `The combat collection STARTER/` (5곡) | 음원 팩 (STARTER) | — | ⚠️ 팩 라이선스 확인 · 쓰는지 확인 |
 
-> 조명 박자 데이터는 Beat Sage(AI 악보 생성)로 만들었어요. 생성물의 상업 이용 조건도 확인해요.
+> 조명 박자 데이터는 Beat Sage(AI 악보 생성)로 만들었음. 생성물의 상업 이용 조건 확인 필요.
 
 ## 4. 그 밖의 리소스
 | 리소스 ID | 위치 | 쓰는 곳 | 출처 | 라이선스 |
@@ -56,7 +59,7 @@
 |---|---|---|---|
 | `SONG_REPLACE` | let-it-work 대체곡 | §2 | ⚠️ 대기 |
 | `FONT_KR` | 맑은 고딕 대체 한글 폰트 | §2 | ⚠️ 대기 |
-| `UI_RESULT_STARS` | 별 1 ~ 3개 결과 화면 · 실패 이유 | [REQ_110](planning_Requirements.md) | 대기 |
-| `UI_SAFETY` | 시작 안전 안내 (주변 공간) | [QA](qa_QA_Release.md) §4 | 대기 |
-| `UI_CREDITS` | 크레딧 (Sketchfab 작가 · 곡 · 폰트) | [REQ_113](planning_Requirements.md) | 대기 |
-| `STORE_*` | VR 스토어 이미지 · 트레일러 | [QA](qa_QA_Release.md) §5 | 대기 |
+| `UI_RESULT_STARS` | 별 1 ~ 3개 결과 화면 · 실패 이유 | [REQ_110](planner_Requirements.md) | 대기 |
+| `UI_SAFETY` | 시작 안전 안내 (주변 공간) | [QA](tester_Release.md) §4 | 대기 |
+| `UI_CREDITS` | 크레딧 (Sketchfab 작가 · 곡 · 폰트) | [REQ_113](planner_Requirements.md) | 대기 |
+| `STORE_*` | VR 스토어 이미지 · 트레일러 | [QA](tester_Release.md) §5 | 대기 |

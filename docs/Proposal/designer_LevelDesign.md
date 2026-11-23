@@ -1,16 +1,18 @@
 # 레벨 디자인 — 3레인 · 10레벨
 
-> 문서 세트: [목차](common_Index.md) · 기획: [컨셉](planning_Concept.md) · [시스템](planning_System.md) · [전투·개체](planning_Combat_Entity.md) · **레벨 디자인** · [밸런스](planning_Balance.md) · 사업·운영: [사업 검토](owner_Business.md) · [요구사항·로드맵](planning_Requirements.md) · [Business Model](planning_Monetization.md) · [서버·데이터](dev_Server_Data.md) · [리소스](design_Resources.md) · [로그·지표](planning_Analytics.md) · [QA·출시](qa_QA_Release.md) · [라이브 운영](ops_LiveOps.md) · [사업화·법무](owner_Business_Legal.md) · [needFix](common_needFix.md)
-> 데이터: [`Balance/level_goal.json`](planning_Balance/level_goal.json)
+> 문서 세트: [목차](common_Index.md) · 기획: [컨셉](planner_Concept.md) · [시스템](planner_System.md) · [전투·개체](planner_Combat_Entity.md) · **레벨 디자인** · [밸런스](planner_Balance.md) · 사업·운영: [사업 검토](owner_Business.md) · [요구사항·로드맵](planner_Requirements.md) · [Business Model](planner_Monetization.md) · [서버·데이터](developer_Server_Data.md) · [리소스](designer_Resources.md) · [로그·지표](planner_Analytics.md) · [QA·출시](tester_Release.md) · [라이브 운영](operator_LiveOps.md) · [사업화·법무](owner_Legal.md) · [needFix](common_needFix.md)
+> 데이터: [`Balance/level_goal.json`](planner_Balance/level_goal.json)
 
-> **문서 정보** · 문서 번호 `D05-LEVEL` · 버전 v1.0 · 상태 `Review` · 담당 레벨 디자이너 · 최종 수정 2026-11-21 · 관련 문서 [밸런스](planning_Balance.md)
+> **문서 정보**
+
+| 문서 번호 | 버전 | 상태 | 책임자 | 협업 | 최종 수정 | 관련 문서 |
+|---|---|---|---|---|---|---|
+| `D05-LEVEL` | v1.1 | `Review` | 레벨 디자이너 | 밸런스 기획자 | 2026-11-23 | [밸런스](planner_Balance.md) |
 
 **변경 이력**
 
 | 버전 | 날짜 | 변경 내용 | 사유 | 결정자 | 영향 범위 |
 |---|---|---|---|---|---|
-| v0.9 | 2026-11-20 | 기존 문서 (자세한 기록은 git 커밋) | — | 레벨 디자이너 | — |
-| v1.0 | 2026-11-21 | 문서 정보 · 변경 이력 · 문서 번호 추가, 사업 · 운영 문서와 연결 | — | 레벨 디자이너 | 문서만 |
 
 ---
 
@@ -31,7 +33,7 @@
 
 어느 레인을 쳐도 판정은 같고, 판정 후 3세트 모두 다시 세움
 ```
-> 실제 레인 · 보관대 배치는 씬 캡처로 넣어 주세요 → [S-08](common_needFix.md)
+> 실제 레인 · 보관대 배치는 씬 캡처 첨부 필요 (담당: 레벨 디자이너) → [S-08](common_needFix.md)
 
 **[구성도] BowlingGame 씬 구성**
 ```mermaid
@@ -101,7 +103,7 @@ z -20.4   x 22.5 ~ 31.9  (오른쪽 = +x, 위 = +z)
 | x | 핀 세트 — **씬에서 꺼져 있음** | `핀 (3)` | 30.9, 2.4 |
 | A | `Steps Area` (보관대 바로 뒤) | `Steps Area` | 27.3, -18.3 |
 
-보관대 줄(z -16.7)에서 핀 줄(z 2.4)까지 약 **19.1m**, 레인 간격은 약 **2.5m**예요. 핀 세트 4개 중 `핀 (3)`이 꺼져 있고 코드(`FindObjectsByType`)는 켜진 것만 찾으므로, 지금 씬에서는 **레인 3개**로 동작해요. 플레이어(XR Origin) 시작 위치와 메뉴 패널 위치는 씬 캡처로 확인이 필요해요.
+보관대 줄(z -16.7)에서 핀 줄(z 2.4)까지 약 **19.1m**, 레인 간격은 약 **2.5m**임. 핀 세트 4개 중 `핀 (3)`이 꺼져 있고 코드(`FindObjectsByType`)는 켜진 것만 찾으므로, 지금 씬에서는 **레인 3개**로 동작함. 플레이어(XR Origin) 시작 위치와 메뉴 패널 위치는 씬 캡처로 확인이 필요함.
 
 ## 2. 레벨별 목표 (`목표 = 레벨 × 500`, 핀 1개 = 100점, 최대 4투구)
 | 레벨 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |

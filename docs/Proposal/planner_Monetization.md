@@ -1,25 +1,28 @@
 # Business Model — VR Bowling (BowllyBoll)
 
-> 문서 세트: [목차](common_Index.md) · 기획: [컨셉](planning_Concept.md) · [시스템](planning_System.md) · [전투·개체](planning_Combat_Entity.md) · [레벨 디자인](planning_LevelDesign.md) · [밸런스](planning_Balance.md) · 사업·운영: [사업 검토](owner_Business.md) · [요구사항·로드맵](planning_Requirements.md) · **Business Model** · [서버·데이터](dev_Server_Data.md) · [리소스](design_Resources.md) · [로그·지표](planning_Analytics.md) · [QA·출시](qa_QA_Release.md) · [라이브 운영](ops_LiveOps.md) · [사업화·법무](owner_Business_Legal.md) · [needFix](common_needFix.md)
+> 문서 세트: [목차](common_Index.md) · 기획: [컨셉](planner_Concept.md) · [시스템](planner_System.md) · [전투·개체](planner_Combat_Entity.md) · [레벨 디자인](designer_LevelDesign.md) · [밸런스](planner_Balance.md) · 사업·운영: [사업 검토](owner_Business.md) · [요구사항·로드맵](planner_Requirements.md) · **Business Model** · [서버·데이터](developer_Server_Data.md) · [리소스](designer_Resources.md) · [로그·지표](planner_Analytics.md) · [QA·출시](tester_Release.md) · [라이브 운영](operator_LiveOps.md) · [사업화·법무](owner_Legal.md) · [needFix](common_needFix.md)
 
-> **문서 정보** · 문서 번호 `D07-BM` · 버전 v1.0 · 상태 `Draft` · 담당 기획자 · 대표 · 최종 수정 2026-11-21 · 관련 문서 [밸런스](planning_Balance.md) · [서버·데이터](dev_Server_Data.md)
+> **문서 정보**
+
+| 문서 번호 | 버전 | 상태 | 책임자 | 협업 | 최종 수정 | 관련 문서 |
+|---|---|---|---|---|---|---|
+| `D07-BM` | v1.1 | `Draft` | 기획자 | 대표 (승인) | 2026-11-23 | [밸런스](planner_Balance.md) · [서버·데이터](developer_Server_Data.md) |
 
 **변경 이력**
 
 | 버전 | 날짜 | 변경 내용 | 사유 | 결정자 | 영향 범위 |
 |---|---|---|---|---|---|
-| v1.0 | 2026-11-21 | 최초 작성 | — | 기획자 | — |
 
 ---
 
 ## 1. 목적
-**어떻게 돈을 벌지** 정하는 문서예요.
+**어떻게 돈을 벌지** 정하는 문서임.
 > 지금 구현: 수익화 없음. 게임 안 재화 없음 (점수 · 기회 · 레벨만).
 
 ## 2. Business Model 구조
 | 항목 | 결정 (제안) | 이유 |
 |---|---|---|
-| 주 수익원 | **저가 유료 앱** | VR 스토어는 유료 앱이 일반적, VR 안 광고는 몰입을 깨요. 10레벨 분량이라 가격은 낮게 |
+| 주 수익원 | **저가 유료 앱** | VR 스토어는 유료 앱이 일반적, VR 안 광고는 몰입을 깸. 10레벨 분량이라 가격은 낮게 |
 | 추가 수익 | 레벨 팩 (출시 후, 기믹 레벨 묶음) | 레벨 데이터(JSON)로 추가하기 쉬움 |
 | 넣지 않는 것 | 광고 · 가챠 · 재화 | 입문자 대상 · 몰입 |
 | 체험 | 레벨 1 ~ 3 무료 데모 (선택) | 손맛을 먼저 느끼게 → 환불률 낮춤 |
@@ -38,7 +41,7 @@
 
 예) 첫 3개월 800개 × ₩7,700 × (1 − 0.30) × (1 − 0.05) = 약 ₩410만
 ```
-> 판매 수 · 수수료(30%)는 가정이에요 → [사업화 · 법무](owner_Business_Legal.md)에서 스토어 조건 확인.
+> 판매 수 · 수수료(30%)는 가정임 → [사업화 · 법무](owner_Legal.md)에서 스토어 조건 확인.
 
 ## 5. 예외 처리
 | 상황 | 처리 |
